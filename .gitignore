@@ -1,0 +1,22 @@
+# Python
+__pycache__/
+*.pyc
+.pytest_cache/
+.mypy_cache/
+.ipynb_checkpoints/
+
+# Environments
+.venv/
+venv/
+env/
+.conda/
+*.conda
+*.egg-info/
+
+# IDE
+.idea/
+.vscode/
+
+# OS
+.DS_Store
+Thumbs.db
