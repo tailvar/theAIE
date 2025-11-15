@@ -1,22 +1,21 @@
 # Python
 __pycache__/
 *.pyc
-.pytest_cache/
-.mypy_cache/
+*.pyo
+*.pyd
 .ipynb_checkpoints/
 
-# Environments
+# Envs (cover both venv and conda-in-project possibilities)
 .venv/
 venv/
 env/
 .conda/
-*.conda
-*.egg-info/
 
 # IDE
 .idea/
 .vscode/
 
-# OS
+# OS noise
 .DS_Store
 Thumbs.db
+

@@ -1,0 +1,10 @@
+name: theAIE
+channels:
+  - conda-forge
+dependencies:
+  - python=3.11
+  - pandas
+  - numpy
+  - matplotlib
+  - scikit-learn
+prefix: /home/oem/miniconda3/envs/theAIE
