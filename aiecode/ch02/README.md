@@ -110,7 +110,7 @@ Across all implementations, the network reliably learns the nonlinear XOR bounda
 
 ## Data
 
-No external data sources are required. The dataset consists of **synthetic XOR-style points** uniformly sampled from the square \([-1, 1]^2\), labelled according to the sign of \((x_1 \cdot x_2)\). All experiments run deterministically using fixed random seeds.
+No external data sources are required. The dataset consists of **synthetic XOR-style points** uniformly sampled from the square $[-1, 1]^2$, labelled according to the sign of $(x_1 \cdot x_2)$. All experiments run deterministically using fixed random seeds.
 
 ---
 

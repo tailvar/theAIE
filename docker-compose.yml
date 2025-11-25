@@ -1,0 +1,16 @@
+
+services:
+  api:
+    build:
+      context: aiecode
+      dockerfile: code/ch03/Dockerfile
+    image: eng-ch02-api:compose
+    ports:
+      - "8000:8000"
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD-SHELL", "python -c \"import urllib.request,sys; sys.exit(0 if urllib.request.urlopen('http://localhost:8000/stats?seed=1&n=1').status==200 else 1)\""]
+      interval: 10s
+      timeout: 3s
+      retries: 5
+      start_period: 5s
