@@ -23,46 +23,32 @@ Every iteration of neural-network training follows the same computational pipeli
    (PyTorch accumulates gradients by default, so clearing them is essential.)
 
 2. **Forward pass**  
-   Inputs flow through the network to produce predictions using the current parameters:
-   $$
-   x \;\longrightarrow\; f_\theta(x)
-   $$
+   Inputs flow through the network to produce predictions using the current parameters:  
+   
+        x ──> fθ(x)
+
 
 3. **Loss computation**  
    Measures how far the prediction is from the target:
-   $$
-   L = \text{loss}\big(f_\theta(x),\, y\big)
-   $$
+    
+       L = loss(fθ(x), y)
+
 
 4. **Backward pass**  
-   Applies the chain rule to compute gradients of the loss with respect to all parameters:
-   $$
-   \nabla_\theta L
-   $$
+   Applies the chain rule to compute gradients of the loss with respect to all parameters:  
+   
+       ∇θ L
+           
 
 5. **Parameter update (`step()`)**  
-   The optimiser uses these gradients to tweak the parameters slightly:
-   $$
-   \theta \;\leftarrow\; \theta - \eta\,\nabla_\theta L
-   $$
+   The optimiser uses these gradients to tweak the parameters slightly:  
+   
+        θ ← θ − η · ∇θ L
+
 
 Together, these operations form the core **learning loop** in both the NumPy and PyTorch implementations of the MLP.
 
----
-
-### Training Loop Diagram
-
-$$
-\boxed{\text{zero\_grad}} 
-\;\Longrightarrow\;
-\boxed{\text{forward}}
-\;\Longrightarrow\;
-\boxed{\text{loss}}
-\;\Longrightarrow\;
-\boxed{\text{backward}}
-\;\Longrightarrow\;
-\boxed{\text{step}}
-$$
+    [ zero_grad ] ──▶ [ forward ] ──▶ [ loss ] ──▶ [ backward ] ──▶ [ step ]
 
 ---
 
