@@ -1,7 +1,7 @@
 # Gradient-Based Optimization Case Study
 
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](
-https://colab.research.google.com/github/tailvar/aiecode/blob/master/ch01/notebooks/tae_capstone_wk1.ipynb
+https://colab.research.google.com/github/tailvar/theAIE/blob/master/aiecode/ch01/notebooks/tae_capstone_wk1.ipynb
 )
 
 ## Overview
