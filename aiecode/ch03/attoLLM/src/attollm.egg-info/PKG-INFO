@@ -1,0 +1,5 @@
+Metadata-Version: 2.4
+Name: attollm
+Version: 0.0.1
+Summary: A tiny GPT-style language model for learning
+Requires-Python: >=3.1
