@@ -1,0 +1,14 @@
+artifact_uri: mlflow-artifacts:/0/1982839fa4b0450f8a9c242fc597e0ae/artifacts
+end_time: 1764826734629
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 1982839fa4b0450f8a9c242fc597e0ae
+run_name: orderly-whale-224
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1764826734618
+status: 3
+tags: []
+user_id: oem

@@ -1,0 +1,7 @@
+{
+  "seed": 7,
+  "n_rows": 20,
+  "mse": 1.524876356124878,
+  "features_path": "artifacts/features.npy",
+  "model_path": "artifacts/model.npz"
+}

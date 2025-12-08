@@ -1,0 +1,21 @@
+{
+  "config": {
+    "block_size": 64,
+    "batch_size": 32,
+    "train_val_split": 0.9,
+    "level": "word",
+    "d_model": 128,
+    "num_heads": 4,
+    "num_layers": 2,
+    "d_ff": 256,
+    "learning_rate": 0.0003,
+    "max_steps": 3000,
+    "eval_interval": 200,
+    "seed": 123
+  },
+  "created_at": "2025-12-07T11:31:47",
+  "run_dir": "runs/20251207T113147_seed123_tiny_transformer",
+  "final_step": 0,
+  "final_train_loss": NaN,
+  "final_val_loss": NaN
+}
