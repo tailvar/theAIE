@@ -1,3 +1,5 @@
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](
+https://colab.research.google.com/github/tailvar/TheAIE/blob/master/aiecode/ch03/notebooks/tae_capstone_wk3.ipynb)
 # **Tiny Transformer – Architecture, Workflow, and Reproducibility**
 
 This project implements a compact GPT-style Transformer model alongside a fully reproducible, GPU-accelerated development and training stack. The environment is designed to be modular, cost-efficient, and seamless to work with from a local IDE while executing all computation remotely on a GPU.
