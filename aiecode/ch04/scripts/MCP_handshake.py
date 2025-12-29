@@ -32,7 +32,7 @@ async def run_loop(): # orchestrate handshake, resource read and tool call
         tool_id = str(uuid.uuid4())
         """This is the ACT step
         1) tool is named 'run_diagnostic'
-        2) arguments rae structured {'command':'...', 'host':'...'
+        2) arguments are structured {'command':'...', 'host':'...'
         3) in a real MCP flow those arguments are validated against a schema discovered earlier
         => the server responds with a diagnostic oncluding * status(ok/error), results payload,
         metrics(latency/cost/etc)so your orchestrator can enforce budgets"""

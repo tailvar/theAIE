@@ -1,4 +1,4 @@
-from dataclasses import dataclass
++from dataclasses import dataclass
 from langchain.agents import create_agent
 from langchain.chat_models import init_chat_model
 from langchain.tools import tool, ToolRuntime
