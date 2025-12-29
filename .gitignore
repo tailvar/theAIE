@@ -1,21 +1,77 @@
+################################################
 # Python
+################################################
 __pycache__/
-*.pyc
-*.pyo
-*.pyd
-.ipynb_checkpoints/
-
+*.py[cod]
+*.so
+*.egg
+*.egg-info/
+dist/
+build/
+.eggs/
+pip-wheel-metadata/
+.python-version
+################################################
 # Envs (cover both venv and conda-in-project possibilities)
+################################################
 .venv/
 venv/
 env/
+ENV/
+conda-env/
+.miniconda/
+*.conda
 .conda/
-
-# IDE
+################################################
+# Secrets and environment variables
+################################################
+.env
+.env.*
+*.env
+################################################
+# Jupyter Notebooks
+################################################
+.ipynb_checkpoints/
+notebooks/
+################################################
+# IDEs & Editors
+################################################
 .idea/
+*.iml
 .vscode/
-
-# OS noise
+.history/
+################################################
+# OS specific
+################################################
 .DS_Store
 Thumbs.db
+desktop.ini
+################################################
+# Testing & Coverage
+################################################
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+.mypy_cache/
+################################################
+# ML / experiment artefacts (recommended)
+################################################
+outputs/
+mlruns/
+runs/
+checkpoints/
+*.pt
+*.ckpt
+*.npy
+*.npz
+.hydra/
+
+################################################
+# Misc
+################################################
+*.log
+*.tmp
+*.swp
+*.bak
 
