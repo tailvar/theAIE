@@ -9,6 +9,9 @@ from langchain_community.document_loaders import WebBaseLoader
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 from langchain.tools import tool
 from langchain.agents import create_agent
+from dotenv import load_dotenv
+
+load_dotenv()
 
 api_key = os.getenv("OPENAI_API_KEY")
 if not api_key:

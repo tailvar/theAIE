@@ -1,0 +1,8 @@
+[
+  { "uri": "memory://alerts/latest", "description": "Latest alert snapshot (JSON)" },
+  { "uri": "memory://telemetry/recent", "description": "Recent telemetry snapshot (JSON)" },
+  { "uri": "memory://runbooks/catalog", "description": "List of available runbook documents" },
+  { "uri": "memory://memory/recent?alert_id={id}&limit=20", "description": "Recent memory entries for a given alert" },
+  { "uri": "memory://memory/all?limit=200", "description": "Recent memory entries across all alerts" }
+]
+

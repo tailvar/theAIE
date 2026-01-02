@@ -1,0 +1,39 @@
+[
+  {
+    "name": "retrieve_runbook",
+    "description": "Search runbooks by keyword; returns top passages with citations.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "query": { "type": "string", "minLength": 1 },
+        "top_k": { "type": "integer", "minimum": 1, "maximum": 10, "default": 5 },
+        "max_chars_per_hit": { "type": "integer", "minimum": 200, "maximum": 2000, "default": 800 }
+      },
+      "required": ["query"]
+    }
+  },
+  {
+    "name": "run_diagnostic",
+    "description": "Run a sandboxed diagnostic command against a host (allowlisted kubectl patterns).",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "command": { "type": "string", "minLength": 1 },
+        "host": { "type": "string", "minLength": 1 }
+      },
+      "required": ["command", "host"]
+    }
+  },
+  {
+    "name": "summarize_incident",
+    "description": "Produce a concise incident handoff note (markdown) referencing evidence.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "alert_id": { "type": "string", "minLength": 1 },
+        "evidence": { "type": "array", "items": { "type": "string" }, "default": [] }
+      },
+      "required": ["alert_id"]
+    }
+  }
+]

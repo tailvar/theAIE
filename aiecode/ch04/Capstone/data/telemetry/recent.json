@@ -1,0 +1,14 @@
+{
+  "service": "staging-api",
+  "window": "last_15m",
+  "metrics": {
+    "p95_latency_ms": 920,
+    "error_rate": 0.35,
+    "restarts": 21
+  },
+  "deploy": {
+    "version": "1.7.3",
+    "git_sha": "abc1234",
+    "deployed_at_utc": "2025-12-30T01:10:00Z"
+  }
+}
