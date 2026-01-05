@@ -5,13 +5,24 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "incident-mcp"
 version = "0.1.0"
-description = "Incident Command Agent capstone: MCP-like JSON-RPC over stdio with tools/resources/memory/telemetry."
+description = "Incident Command Agent capstone: MCP-like JSON-RPC over stdio/ws with tools/resources/memory/telemetry."
+readme = "README.md"
 requires-python = ">=3.10"
 dependencies = [
   "python-dotenv>=1.0.1",
   "jsonschema>=4.22.0",
-  "openai>=1.40.0",
-  "anthropic>=0.34.0",
+]
+
+[project.optional-dependencies]
+anthropic = ["anthropic>=0.34.0"]
+openai = ["openai>=1.40.0"]
+ws = [
+  "fastapi>=0.110.0",
+  "uvicorn[standard]>=0.30.0",
+  "websockets>=12.0",
+]
+dev = [
+  "pytest>=8.0.0",
 ]
 
 [tool.setuptools]
@@ -23,3 +34,4 @@ where = ["src"]
 [tool.pytest.ini_options]
 testpaths = ["tests"]
 addopts = "-q"
+

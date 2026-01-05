@@ -1,0 +1,30 @@
+# -------------------------
+# Core runtime
+# -------------------------
+python-dotenv>=1.0.0
+
+# JSON / schema / validation
+jsonschema>=4.20.0
+
+# HTTP / server (used by WS server)
+fastapi>=0.110.0
+uvicorn>=0.27.0
+
+# -------------------------
+# Telemetry / utilities
+# -------------------------
+pydantic>=2.5.0
+
+# -------------------------
+# LLM clients (optional, selected via PLANNER_BACKEND)
+# -------------------------
+openai>=1.12.0
+anthropic>=0.25.0
+
+# -------------------------
+# WebSocket transport (optional)
+# Used only when MCP_TRANSPORT=ws
+# -------------------------
+websocket-client>=1.7.0
+
+

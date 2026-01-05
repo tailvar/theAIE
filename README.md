@@ -39,20 +39,24 @@ This Capstone bridges the gap between neural-network mechanics and modern large 
 # Capstone 4 - Incident Command Agent (Model Context Protocol)
 ## Location: `aiecode/ch04/Capstone`
 
-The final Capstone shifts focus from model internals to system architecture. It implements an <b>Incident Command Agent</b> as a concrete demonstration of <b>Model Context Protocol</b>.
+The final Capstone shifts focus from model internals to system architecture. It implements an <b>Incident Command Agent</b> as a concrete demonstration of <b>Model Context Protocol</b>, showing how a Large Language Model (LLM) can be embedded safely and credibly within a larger engineering system.
 
-The agent operates and explicit <b>Observe -> Plan -> Act -> Learn</b> loop. It observes structured resources (alerts, telemetry, runbooks, memory), selects the next action using either a Large Language Model or deterministic rules, executes that action through a strictly designed tool interface, and records compact memory deltas and telemetry for replay and audit.
+The agent operates and explicit <b>Observe -> Plan -> Act -> Learn</b> loop. It observes structured resources (alerts, telemetry, runbooks, memory), selects the next action using either a <b>Large Language Model</b> or <b>deterministic rules</b>, executes that action through a strictly designed tool interface, and records compact memory deltas and telemetry for replay and audit.
 
 The system is intentionally split into two independent processes:
 
     *   a client (agent) responsible for orchestrating and planning
     *   An MCP server (tool stack) that exposes resources and tools via JSON-RPC
 
-Communication occurs over standard input/output using newline-delimited JSON-RPC messages, making all interactions explicit, replayable and transport agnostic. The LLM is treated narrowly as a constrained planner rather than an autonomous actor.
+For demonstration purposes, the Capstone can also be run in a <b>Google Colab environment</b>. In this mode, the agent and MCP server run together using the same <b>stdio-based JSON-RPC protocol</b>, allowing the full agent-server loop to be exercised without local installation.
 
-This Capstone demonstrates how AI components can be embedded safely and credibly inside larger engineering systems, with observability, reproducibility and human handoff as first-class design goals.
+In practice, the Colab stdio configuration is most suitable for the <b>deterministic rules planner</b>. This enables a complete, zero-cost demonstration of MCP concepts - tools, resources, memory, telemetry, replay amd human handoff - without eequiring external API keys or persistent secrets.
 
-# Conceptual Progreassion Across Capstones
+Running the agent in <b>LLM planning mode</b> rfom Colab is possible, but requires explicit configuration of API cerdentials and acceptance of Colabs limitations around secret management and long-running processes. For this reason, LLM-based planning is considered an <b>advanced or optional variant</b> in Colab rather than the canonical execution path.
+
+A more advanced demonstration runs the MCP server inside Colab as a network service (WebSockets) and connects to it from a local agent via a public tunnel (e.g. Cloudflared or ngrok). This allows LLM planning to occur locally while tools and resources live remotely, but introduces additional operational complexity. For assessment and clarity <b>local stdio execution remains the recommended and canonical mode</b>.
+
+# Conceptual Progression Across Capstones
 The four Capstones are intentionally cumulative:
 
     *   Capstone 1 builds intuition for optimisation dynamics

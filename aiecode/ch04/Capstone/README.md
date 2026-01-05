@@ -6,6 +6,27 @@ At a high level, the agent observes a situation, decides what to do next, execut
 
 The Incident Command scenario provides a concrete and realistic example of a system which uses framing-alerts, telemetry, runbooks, diagnostics and handoff notes-but the underlying architecture is general and applicable to many other domains.
 
+## Project Root and Runtime Contract
+A key architectural decision in this Capstone is the explicit separation between <b>code</b> and <b>runtime</b>.
+
+All runtime-visible files - tools, resources, runbooks, telemetry snapshots, persistent memory, prompts and generated artifacts - are resolved relative to a single directory known as the <b>project root</b>. This root is defined in the environment variable:
+
+`INCIDENT_MCP_ROOT`
+
+Both the agent and the MCP server rely on this variable to locate:
+
+    -   `config/` - tool and resources schema
+    -   `data/` - alerts, telemetry, runbooks and persistent memory
+    -   `prompts/' - planner system prompts
+    -   `atrifacts` - telemetry logs, traces and handoff documents
+
+The design ensures that:
+
+    -   The MCP server remains deterministic and inspectable
+    -   The same codebase can run locally, in CL or in Colab
+    -   Replays are portable and reproducible across environments
+Importantly, <b>no runtime state is baked into the Python package itself</b>. The agent is portable, the "world" it reasons about is external explicit and versionable.
+
 ## Conceptual Model
 
 The core of the system is a simple decision loop: <b>Observe -> Plan -> Act -> Learn.</b>
@@ -57,56 +78,43 @@ Although the Incident Command Agent appears to be a single program  it is in fac
 
 In this project the agent launches the server as a subprocess and connects to it using operating system pipes. The agent writes JSON-encoded requests to the server's standard input, and the server replies with JSON-encoded responses on standard output. Each message occupies exactly one line of JSON. This strict one-request / one response pattern keeps the interaction deterministic and easy to reason about.
 
-When the agent needs something from the server-such as discovering avaialble tools, reading a resource, or executing a tool-it constructs a JSON-RPC request containing a unique identifier, a method name and a structured parameter object. This request is serialised to JSON, written to the servers stdin, and immediately flushed so it is delivered without delay. The ah=gent then blocks, waiting to read a single line of JSON from the servers stdout.
-
-On the server side, a simple event loop continuously reads newline-delimited JSON messages from stdin. Each message is parsed, validated, and dispatched to a handler based on the requested method. The sever executes dterministic logic, constructs a structured result (or error), and writes a JSON-RPC response back to stdout using the same request identifier. This identifier allows the agent to safely correlate responses to requests, eben though the JSON-RPC is designed to support more general messaging patters.
-
 A critical design rule is that <b>only protocol messages are written to stdout</b>. All human-readable logs, banners and diagnostics are written to stderr instead. This seperation ensures that the protocol stream remains clean, machine-readable and replayable. Any transscipt captured from stdout alone can be deterministically re-executed for debugging or evaluation.
 
 Using stdio pipes rather than WebSockets or HTTP is an intentional choice for the Capstone. Pipes eliminate networking complexity, avoid background services and port management, and make every interaction visible and auditable. Importantly the <b>Model Context protocol</b> itself is transport agnostic: the same JSON-RPC messages could be sent over WebSockets or HTTP without changing the agent logic, tools or memory model. The stdio approach simply makes the mechanics of the protocol as transparent as possible for demonstration and assessment purposes.
 
-## Why MCP and Structured Tools
-
-MCP provides a strict contract between the agent and its tools. By forcing all interactions to go through explicit method calls with schemas, the system avoids immplicit side effects and hidden state. This makes it possible to replay past runs, evaluate changes to the planner or tools, and reason clearly about system behaviour.
-
-Crucially, the protocol allows the language model to be swapped, tuned or even placed with rule-based logic without changing the rest of the system. The LLM is therefore a component, not the system itself.
-
-## Incident Command Scenario
-
-The chosen scenario models an on-call incident workflow. An alert is emitted by a platform, indicting a problem such as CrashLoopBackOff or elevated error rate. The agent gathers context, consults runbooks, executes diagnostics, and ultimately produces a concise handoff suitable for a human engineer.
-
-The scenario is intentionally familiar and practical, but it serves primarily as a narrative wrapper around the underlying agent architecture. The same pattern could be applied to research workflows, compliance checks, data analysis or experimentation pipelines.
-
-## Alignment with Capstone Requirements
-
-The project satisfies the Capstone requirements in the following ways:
-
-The server exposes multiple <b>Resources</b> (alerts, telemetry, runbooks, memory) and multiple <b>Tools</b> (retrieval, diagnostics, summarisation) via <b>MCP</b>.
-
-The client implements a complete <b>Observe -> Plan -> Act -> Learn</b> loop with explicit budget enforcement and guardrails. All interactions are logged with structured telementry, including request/response transcripts and high-level run events, enabling replay and audit. Artifacts such as memory snapshots and incident handoff documents are written to disk to demonstrate persistence and human readable outputs. Configurations and secrets are externalised via environment variables, ensuring reproducibility and safe handling of credentials.
-
 ## Configuration
-All configuration is provided via the <b>environment variables</b>. For local development it is recommended to use a .env file at the project root (ignored by git). The agent automatically reads configuration from the environment file, regardless of whether variables were set by .env or shell export.
+The project is designed to be run locally using standard Python tooling:
+    
+    1.  Create and activate a Python 3.10+ virtual environment.
+    2.  Set up the project root:
+            `export INCIDENT_MCP_ROOT=$(pwd)` -> this can also live in your .env file
+    3.  Install dependencies
+    4.  Start the MCP server:
+            `python -m incident_mcp server`
+    5. Run the agent:
+            *   LLM mode:
+                    `export PLANNER_BACKEND=anthropic` # or openai
+                    `python -m incident_mcp agent --root $(pwd)
+            *   Rules mode:
+                    `export PLANNER_BACKEND=rules`
+                    `python -m incident_mcp agent --root$(pwd)`
+Each run produces:
+    
+    *   Telemetry logs:         `artifacts/runs.jsonl`
+    *   Replay traces:          `artifacts/traces/run-<id..jsonl`
+    *   Persistent memory:      `data/memory/memory.jsonl`
+    *   Human handoff notes:    `artifacts/handoffs/handoff_<run_id>.md`
+These outputs are identical regardless of the planning mode (LLM or Rules)
+## Optional Colab Path (Demo Only)
 
-## Running the Demo
+Local execution is the canonical path for this Capstone. Colab is supported only as an optional demonstration environment.
 
-The project is designed to be run locally using standard Python tooling.
+In stdio mode, the agent starts the MCP server as a subprocess and communicates with it over operating-system pipes (stdin/stdout). This makes the protocol extremely transparent (one JSON-RPC message per line) and avoids any networking or port management. The provided Colab notebook runs the agent end-to-end in this same stdio configuration, so you do **not** need to start a separate server process in Colab.
 
-1. Create and activate a Pythin 3.10+ virtual environment. Set the protocol root: export INCIDENT_MCP_ROOT=$(pwd) This can live in .env file.
-2. Install dependencies.
-3. Configure the environment variables in the .env file (LLM keys, budgets).
-4. Start the MCP Server - python -m incident_mcp server
-5. Run the Agent (LLM MODE) - export PLANNER_BACKEND=Anthropic (or openai) python -m incident_mcp agent --root $(pwd), OR...
-6. Run the Agent (RULES MODE) - export PLANNER_BACKEND=rules python -m incident_mcp agent --root $(pwd).
+Colab runtimes are ephemeral, so by default all artifacts (telemetry, traces, memory, handoff notes) disappear when the runtime resets. If you want persistence, mount Google Drive and point the project’s `artifacts/` and `data/` directories into Drive so logs and memory survive restarts. If you do this, keep the on-disk layout identical to local runs so replay and inspection work the same way.
 
-Each run produces the following artifacts:
+A more advanced Colab variant is to run the MCP server as a network service (WebSockets) inside Colab and connect to it from a local agent via a public tunnel (cloudflared/ngrok). This is useful if you explicitly want “server in Colab, agent on your laptop”, but it adds moving parts: port forwarding, tunnel auth, and long-running process constraints. For the Capstone, stdio remains the recommended transport because it is simpler, auditable, and transport-agnostic with respect to MCP (the same JSON-RPC messages can be carried over pipes, WebSockets, or HTTP).
 
-    -   Telemetry logs: `artifacts/runs.jsonl`
-    -   Replay traces: `artifacts/traces/run-<id>.jsonl`
-    -   Persistent memory: `data/memory/memory.jsonl`
-    -   Human handoff notes: `artifacts/handoffs/handoff_<run_id>.md`
-
-These outputs are identical regardless of the planning mode (RULES or LLM).
 
 ## Extending the project
 

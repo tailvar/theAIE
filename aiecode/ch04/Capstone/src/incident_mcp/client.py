@@ -142,6 +142,39 @@ class StdioJSONRPC:
             pass
         self.proc.terminate()
 
+class WebSocketJSONRPC:
+    """JSON-RPC 2.0 over a WebSocket (one request -> one response)."""
+
+    def __init__(self, ws_url: str, telemetry: Telemetry) -> None:
+        import websocket  # from websocket-client
+
+        self.ws_url = ws_url
+        self.telemetry = telemetry
+        self.ws = websocket.create_connection(ws_url, timeout=30)
+
+    def request(self, method: str, params: Dict[str, Any]) -> Dict[str, Any]:
+        req_id = str(uuid.uuid4())
+        msg = {"jsonrpc": "2.0", "id": req_id, "method": method, "params": params}
+
+        self.telemetry.trace("out", msg)
+        self.ws.send(json.dumps(msg))
+
+        raw = self.ws.recv()
+        resp = json.loads(raw)
+        self.telemetry.trace("in", resp)
+
+        if resp.get("id") != req_id:
+            raise RuntimeError(f"Correlation mismatch: sent id={req_id}, got id={resp.get('id')}")
+        if "error" in resp:
+            raise RuntimeError(f"JSON-RPC error: {resp['error']}")
+        return resp["result"]
+
+    def close(self) -> None:
+        try:
+            self.ws.close()
+        except Exception:
+            pass
+
 
 class IncidentCommandAgent:
     def __init__(
@@ -154,6 +187,8 @@ class IncidentCommandAgent:
             anthropic_model: str = "claude-3-5-sonnet-20241022",
             max_repeat_actions: int = 2,
             planner_prompt_path: Optional[Path] = None,
+            transport: str = "stdio",  # "stdio or ws (WebSocket)"
+            ws_url: Optional[str] = None,  # required when transport == "ws"
     ) -> None:
         self.server_cmd = server_cmd
 
@@ -207,7 +242,18 @@ class IncidentCommandAgent:
         self.max_repeat_actions = max_repeat_actions
 
         # --- RPC transport to server -----
-        self.rpc = StdioJSONRPC(self.server_cmd, self.telemetry)
+        self.transport = transport.strip().lower()
+
+        if self.transport == "ws":
+            # if we have url for WebSocket use WebSocket
+            if not ws_url:
+                raise ValueError("ws_url is required when transport='ws'")
+            from .ws_transport import WebSocketJSONRPC
+            self.rpc = WebSocketJSONRPC(ws_url, self.telemetry)
+        else:
+            # default: stdio
+            self.rpc = StdioJSONRPC(self.server_cmd, self.telemetry)
+
 
         # ---- State -----
         self.step = 0
@@ -354,6 +400,10 @@ class IncidentCommandAgent:
         summary = (alert.get("summary") or "").lower()
         service = alert.get("service") or telemetry.get("service") or "staging-api"
         alert_id = alert.get("id") or observation.get("alert_id") or self.alert_id
+
+        # 0) If we already summarized, finish (prevents repeated summarize calls).
+        if any(e.startswith("[summarize_incident]") for e in self.evidence):
+            return {"action": "finish", "reason": "Handoff already drafted"}
 
         # 1) If we haven't retrieved a runbook yet, do that first.
         if not any(e.startswith("[retrieve_runbook]") for e in self.evidence):
