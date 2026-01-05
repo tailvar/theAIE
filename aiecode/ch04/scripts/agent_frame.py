@@ -17,7 +17,7 @@ it will eventually become too large to read or use firectly The planned policy:
 This file currently includes a placeholder summarize() function that will
 implement this behavious in Chapter 5. For now it is a no-op, called once
 at the end of the run_loop() to establish the control flow.
- """
+"""
 
 from __future__ import annotations
 
