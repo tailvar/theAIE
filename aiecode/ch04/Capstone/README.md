@@ -1,3 +1,5 @@
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](
+https://colab.research.google.com/github/tailvar/theAIE/blob/master/aiecode/ch04/Capstone/notebook/incident_mcp_colab_demo.ipynb)
 # Incident Command Agent (MCP Capstone)
 ## Overview
 This project implements an <b>Incident Command Agent</b> as a Capstone demonstration of the <b>Model Context Protocol</b>. The purpose of the project is not to build a production ready incident-response system, but to show how a <b>Large Language Model (LLM)</b> can be embedded safely and credibly inside a larger engineering system.

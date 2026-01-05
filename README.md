@@ -1,7 +1,7 @@
 # <b><u>theaiengineer</u> - Capstone Projects</b>
 
 ## Overview
-This repository contains four Capstone projects completed as part of the AI Engineer course www.theaiengineer.com Together, they trace a deliberate progression from mathematical foundations, through neural network mechanics and modern large language models, to the deisgn of a fully structured, protocol-driven AI system embedded in a broader engineering context.
+This repository contains four Capstone projects completed as part of the AI Engineer course www.theaiengineer.dev Together, they trace a deliberate progression from mathematical foundations, through neural network mechanics and modern large language models, to the deisgn of a fully structured, protocol-driven AI system embedded in a broader engineering context.
 
 Each Capstone is self contained and documented in its own directory. The top-level purpose of this repository is to show hoe the individual projects fit together conceptually and technically.
 
@@ -10,6 +10,10 @@ The emphasis throughout is on <b>understanding, correctness</b> and <b>engineeri
 # Capstone 1 - Gradient-Based Optimisation Case Study
 ## Location: `aiecode/ch01/`
 ## Notebook: `tae_capstone_wk1.ipynb`
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](
+https://colab.research.google.com/github/tailvar/theAIE/blob/master/aiecode/ch01/notebooks/tae_capstone_wk1.ipynb
+)
+
 This first Capstone connects calculus-based analysis to first-order optimisation algorithms. Starting from an explicitly defined, non-smooth one-dimensional funcrtion, the project derives its piecewise structure, stationary points and global minima, then studies how gradient based methods behave when applied to it.
 
 Gradient Descent, Heavy Ball momentum, Stochastic Gradient Descent and decaying learning-rate schedules are analysed side-by-side. The effects of step size, momentum, noise and decay are visualised through trajectories and convergence diagnostics, with particular attention paid to behavious near non-smooth points.
@@ -19,6 +23,8 @@ This capstone establishes a concrete intuition for optimisation dynamics that un
 # Capstone 2 - Tiny One-Hidden_layer MLP (NumPy -> PyTorch)
 ## Location: `aiecode/ch02/`
 ## Notebook: `tae_capstone_wk2.ipynb`
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/tailvar/theAIE/blob/master/aiecode/ch02/notebooks/tae_capstone_wk2.ipynb)
+
 The second Capstone develops the mathematical or computational foundations of neural networks using a minimal multilayer perceptron trained on the XOR problem.
 
 The project begins with a fully manual NumPy implementation of forward and backward propogation, including an explicit application of the chain rule. It then transitions step-by-step into PyTorch: first reproducing the same computational graph without autograd, then enabling autograd and performing gradient checks, and finally expressing the model using `nn.Module` and `nn.Sequential`.
@@ -28,6 +34,9 @@ Diagnostics such as loss curves, gradient norms, ReLU activity and decision boun
 # Capstone 3 - Tiny Transformer Language Model
 ## Location: `aiecode/ch03/`
 ## Notebook: `tae_capstone_wk3.ipynb`
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](
+https://colab.research.google.com/github/tailvar/TheAIE/blob/master/aiecode/ch03/notebooks/tae_capstone_wk3.ipynb)
+
 The third Capstone develops the core ideas behind modern transformer-based language model at a scale suitable for from-scratch implementation.
 
 Beginning with sequence modelling and content-based attention, the project derives scaled dot-product attention and assembles a GPT-style decoder-only transformmer from fundamental components: multi-head self attention, feed-forward networks, residual connections, layer normalisation and positional encodings.
@@ -38,6 +47,8 @@ This Capstone bridges the gap between neural-network mechanics and modern large 
 
 # Capstone 4 - Incident Command Agent (Model Context Protocol)
 ## Location: `aiecode/ch04/Capstone`
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](
+https://colab.research.google.com/github/tailvar/theAIE/blob/master/aiecode/ch04/Capstone/notebook/incident_mcp_colab_demo.ipynb)
 
 The final Capstone shifts focus from model internals to system architecture. It implements an <b>Incident Command Agent</b> as a concrete demonstration of <b>Model Context Protocol</b>, showing how a Large Language Model (LLM) can be embedded safely and credibly within a larger engineering system.
 
