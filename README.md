@@ -1,7 +1,9 @@
-# <b><u>theaiengineer</u> - Capstone Projects</b>
+# <b><u>theaiengineer</u> - Capstone Project
+
+<img src="tae_logo.png" width="80" alt="tae_logo">
 
 ## Overview
-This repository contains four Capstone projects completed as part of the AI Engineer course www.theaiengineer.dev Together, they trace a deliberate progression from mathematical foundations, through neural network mechanics and modern large language models, to the deisgn of a fully structured, protocol-driven AI system embedded in a broader engineering context.
+This repository contains four Capstone projects completed as part of the AI Engineer course https://theaiengineer.dev/ Together, they trace a deliberate progression from mathematical foundations, through neural network mechanics and modern large language models, to the deisgn of a fully structured, protocol-driven AI system embedded in a broader engineering context.
 
 Each Capstone is self contained and documented in its own directory. The top-level purpose of this repository is to show hoe the individual projects fit together conceptually and technically.
 
