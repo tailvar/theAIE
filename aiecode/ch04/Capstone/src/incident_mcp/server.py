@@ -257,6 +257,17 @@ class MCPStdioServer:
         return {"query": args["query"], "hits": hits}
 
     def _tool_run_diagnostic(self, args: Dict[str, Any]) -> Dict[str, Any]:
+        """
+        This tool returns a simulated diagnostic result rather than executing
+        a real shell command. The stdout is embedded directly in the code so it
+        can be consumed immediately by the agent, logged into traces, and persisted
+        into memory in a deterministic and reproducible way.
+
+        In a production system, this method would execute a real command (e.g. via
+        subprocess or a remote API), apply timeouts and output limits, and optionally
+        persist full logs to artifacts while still returning a structured stdout/stderr
+        summary to the agent.
+        """
         command = args["command"]
         host = args["host"]
 
