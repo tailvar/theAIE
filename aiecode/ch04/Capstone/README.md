@@ -49,7 +49,7 @@ The system is intentionally split into two components:
 
 The <b>Client (agent)</b> is responsible for orchestration. It implements the <b>Observe -> Plan -> Act -> Learn</b> loop, enforces budgets and records telemetry. The LLM is used exclusively within this component to decide which action to take next.
 
-The <b>Server (tool stack)</b> represents the external world. It exposes <b>Resources</b> (alerts, telemetry, runbooks, memory) and <b>Tools</b> (retrieval, diagnostics, summarisation) via MCP using JSON-RPC 2.0. the server is deterministic, validates all inputs and persists state safely.
+The <b>Server (tool stack)</b> represents the external world. It exposes <b>Resources</b> (alerts, telemetry, runbooks, memory) and <b>Tools</b> (retrieval, diagnostics, summarisation) via MCP using JSON-RPC 2.0. the server is deterministic, validates all inputs and persists state safely. The server exposes a set of structured tools, validates inputs against JSON schemas, executes actions and persists both execution traces and memory to disk. Each tool call is measured for basic latency and logged as a durable artifact, giving a clear audit trail f what the agent decided, what it did and what it learned.
 
 Communication between the Client and the Server is fully structured and protocol-driven. Every request and response includes correlation identifiers and can be logged and replayed. This design makes the system testable, debuggable and auditable.
 
@@ -120,7 +120,9 @@ A more advanced Colab variant is to run the MCP server as a network service (Web
 
 ## Extending the project
 
-Although framed as an incident-response agent, this architecture is intentionally general. By changing the exposed resources and tools, the same client can be reused for other domains such as quantitative Research or data science experimentation. The key idea is the disciplined separation between observation, decision making, execution and learning, The project demonstrates how to engineer AI systems that are understandable and trustworth rather than opaque or purely prompt driven.
+Although framed as an incident-response agent, this architecture is intentionally general. By changing the exposed resources and tools, the same client can be reused for other domains such as quantitative Research or data science experimentation. The key idea is the disciplined separation between observation, decision making, execution and learning, The project demonstrates how to engineer AI systems that are understandable and trustworth rather than opaque or purely prompt driven. 
+
+ural extensions to the minimal resource controls implemented would include enforcing timeouts on tool execution, token and cost budgets for LLM calls and latency limits to prevent runaway or slow agents. These controls would make the system more robust and production ready, while preserving the same clear separation between reasoning, tool use and persistent memory.
 
 ## Summary
 
