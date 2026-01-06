@@ -1,5 +1,9 @@
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](
 https://colab.research.google.com/github/tailvar/theAIE/blob/master/aiecode/ch04/Capstone/notebook/incident_mcp_colab_demo.ipynb)
+<p align="left">
+  <img src="assets/tae_logo.png" width="80" alt="TAE logo">
+  <img src="assets/LCM_logo.png" width="120" alt="LCM logo">
+</p>
 # Incident Command Agent (MCP Capstone)
 ## Overview
 This project implements an <b>Incident Command Agent</b> as a Capstone demonstration of the <b>Model Context Protocol</b>. The purpose of the project is not to build a production ready incident-response system, but to show how a <b>Large Language Model (LLM)</b> can be embedded safely and credibly inside a larger engineering system.
@@ -122,7 +126,7 @@ A more advanced Colab variant is to run the MCP server as a network service (Web
 
 Although framed as an incident-response agent, this architecture is intentionally general. By changing the exposed resources and tools, the same client can be reused for other domains such as quantitative Research or data science experimentation. The key idea is the disciplined separation between observation, decision making, execution and learning, The project demonstrates how to engineer AI systems that are understandable and trustworth rather than opaque or purely prompt driven. 
 
-ural extensions to the minimal resource controls implemented would include enforcing timeouts on tool execution, token and cost budgets for LLM calls and latency limits to prevent runaway or slow agents. These controls would make the system more robust and production ready, while preserving the same clear separation between reasoning, tool use and persistent memory.
+Natural extensions to the minimal resource controls implemented would include enforcing timeouts on tool execution, token and cost budgets for LLM calls and latency limits to prevent runaway or slow agents. These controls would make the system more robust and production ready, while preserving the same clear separation between reasoning, tool use and persistent memory.
 
 ## Summary
 
