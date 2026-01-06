@@ -88,18 +88,19 @@ Using stdio pipes rather than WebSockets or HTTP is an intentional choice for th
 The project is designed to be run locally using standard Python tooling:
     
     1.  Create and activate a Python 3.10+ virtual environment.
-    2.  Set up the project root:
+    2.  cd /aiecode/ch04/Capstone/
+    3.  Set up the project root:
             `export INCIDENT_MCP_ROOT=$(pwd)` -> this can also live in your .env file
-    3.  Install dependencies
-    4.  Start the MCP server:
+    4.  Install dependencies
+    5.  In a terminal, Start the MCP server:
             `python -m incident_mcp server`
-    5. Run the agent:
+    6.  In a second terminal, run the agent:
             *   LLM mode:
                     `export PLANNER_BACKEND=anthropic` # or openai
                     `python -m incident_mcp agent --root $(pwd)
             *   Rules mode:
                     `export PLANNER_BACKEND=rules`
-                    `python -m incident_mcp agent --root$(pwd)`
+                    `python -m incident_mcp agent --root $(pwd)`
 Each run produces:
     
     *   Telemetry logs:         `artifacts/runs.jsonl`

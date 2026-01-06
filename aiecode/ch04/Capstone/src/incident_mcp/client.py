@@ -276,6 +276,18 @@ class IncidentCommandAgent:
         self.telemetry.event(self.step, budgets.as_log_dict(), event, **fields)
 
     def initialize(self, budgets: Budgets) -> None:
+        """
+        Bootstarps the agent/server session
+
+        what this does:
+            -   send the vry first JSON-RPC message: `initialise`
+            -   Receives the server "capabilities" (which tools & resources exist)
+            -   Stores the tool lost so later planning can only choose valid tools
+
+        Why this matters:
+            -   This is the handshake: the agent learns what the server can do
+            -   It prevents the planner from investing tools that dont exist
+        """
         self.step += 1
         budgets.steps_used += 1
         self.log(budgets, "initialize_request")
@@ -291,6 +303,20 @@ class IncidentCommandAgent:
         self.log(budgets, "initialize_response", tools=len(self.tools), resources=len(caps["capabilities"]["resources"]))
 
     def observe(self, budgets: Budgets) -> Dict[str, Any]:
+        """
+        Reads rge current "world state" from the server (read-only).
+
+        What we fetchL
+            -   the latest alert snapshot
+            -   Recent telemetry (signals/metrics about the service)
+            -   Recent memory entries for this alert (whats already been done)
+
+        Output:
+            - a single observation dict that is passed into the planner
+
+        Note:
+             -  Observe does not take actions or cause side effects; it only reads data
+        """
         self.step += 1
         budgets.steps_used += 1
 
@@ -310,6 +336,31 @@ class IncidentCommandAgent:
         return obs
 
     def plan(self, budgets: Budgets, observation: Dict[str, Any]) -> Dict[str, Any]:
+        """
+        Chooses the single next best step (the "Plan" phase)
+
+        Two modes:
+            1)  Rukes
+                -   Deterministic Python logic chooses the next tool to call (No LLM)
+            2)  OpenAI/Anthropic:
+                -   An LLM is used ONLY as a planner.
+                -   We provide it with (a) observation (2) allowed tools + schema (c) recent
+                    evidence, and (d) remaining budgets
+                -   The model must return ONE JSON object describing either:
+                    - a tool call, or
+                    - a finish decision
+
+        Returns:
+             -  A structured "action" dict that act() can execute, e.g.
+             {"action":"callTool", "name":"...","arguments":{...}}
+             or,
+             {"action":"finish", "reason":"..."}
+
+        Saftey/Control:
+            - Budgets are included to discourage infinite loops or excessive calls
+            - Tool schemas are included so the model can only propose valid inputs
+        """
+
         self.step += 1
         budgets.steps_used += 1
 
@@ -586,11 +637,49 @@ class IncidentCommandAgent:
 
 
     def learn(self, budgets: Budgets, act_out: Optional[Dict[str, Any]]) -> None:
+        """
+        Records what just happened and prepares context for next step.
+
+        What this does:
+            - Marks the end of one Observe -> Plan -> Act cycle
+            - Logs a "Learn" event into telemetry for replay and audit
+            - Captures a short tail of recent evidence for debugging and context
+
+        Important design point:
+            - The agent itself does not write to long-term memory.
+            - All persistent memory is written by the server when the tools run.
+            - This method simply acknowledes that learning has occurred
+        """
         self.step += 1
         budgets.steps_used += 1
         self.log(budgets, "learn", note="Server persisted tool delta to memory store.", evidence_tail=self.evidence[-6:])
 
     def run(self) -> None:
+        """
+        Executes a full Incident Command Agent lifecycle.
+
+        High level flow:
+            (1) Initialize:
+                -   Perform the protocol handshake with the server
+                -   Discover available tools and resources
+            (2) Observe
+                -   Read alerts, telemetry and recent memory
+            (3) Loop:
+                -   Plan the next action (rues or LLM)
+                -   Act by calling EXACTLY ONE TOOL
+                -   Learn by logging outcomes and evidence
+                -   Observe again with updated state
+            (4) Halt
+                -   Stop cleanly when finished or when a budget is exceeded
+
+        Safety / Control
+            -   Multiple budgets are enforced (steps, time, tool calls, tokens, cost)
+            -   The loop halts deterministically if any budget is breached
+            -   All inetractions are logged for replay and audit
+
+        Clean Up
+            -   The RPC connection to the server is always closed, even on errors.
+        """
         budgets = Budgets(
             max_tool_calls=int(os.getenv("MAX_TOOL_CALLS", "6")),
             max_run_ms=int(os.getenv("MAX_RUN_MS", "20000")),

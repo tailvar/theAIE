@@ -413,7 +413,7 @@ class MCPStdioServer:
                 }
 
                 # Side effect: append memory delta
-                """This is a big deal, the server is the only place that appends memory. This
+                """This is A BIG DEAL, the server is the only place that appends memory. This
                 is the 'Learn' but implemented server side as a persistant log of actions"""
                 try:
                     alert_id = args.get("alert_id")
