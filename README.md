@@ -1,6 +1,9 @@
 # <b><u>theaiengineer</u> - Capstone Project
 
-<img src="tae_logo.png" width="80" alt="tae_logo">
+<p align="left">
+  <img src="assets/tae_logo.png" width="80" alt="TAE logo">
+  <img src="assets/LCM_logo.png" width="120" alt="LCM logo">
+</p>
 
 ## Overview
 This repository contains four Capstone projects completed as part of the AI Engineer course https://theaiengineer.dev/ Together, they trace a deliberate progression from mathematical foundations, through neural network mechanics and modern large language models, to the deisgn of a fully structured, protocol-driven AI system embedded in a broader engineering context.
@@ -22,7 +25,7 @@ Gradient Descent, Heavy Ball momentum, Stochastic Gradient Descent and decaying 
 
 This capstone establishes a concrete intuition for optimisation dynamics that underpins all subsequent work with neural networks.
 
-# Capstone 2 - Tiny One-Hidden_layer MLP (NumPy -> PyTorch)
+# Capstone 2 - Tiny One-Hidden-Layer MLP (NumPy -> PyTorch)
 ## Location: `aiecode/ch02/`
 ## Notebook: `tae_capstone_wk2.ipynb`
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/tailvar/theAIE/blob/master/aiecode/ch02/notebooks/tae_capstone_wk2.ipynb)
