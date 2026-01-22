@@ -1,0 +1,99 @@
+This sum­mer, Mark Zuck­er­berg was strug­gling to poach a top arti­fi­cial intel­li­gence researcher from rival OpenAI when he heard his tar­get had fallen sick. On top of the offer of a stra­to­spheric salary, the bil­lion­aire tech titan added a per­sonal flour­ish: the hand deliv­ery of some homemade soup.
+
+Bespoke touches from one of the world’s richest men are just one ele­ment of the gloves-off, all-con­sum­ing bet that Zuck­er­berg has made this year on turn­ing his social media plat­form from AI lag­gard to leader.
+
+In a head­long rush to develop what he dubs “per­sonal super­in­tel­li­gence” and com­pete with OpenAI and Google, Zuck­er­berg is pump­ing bil­lions of dol­lars into build­ing out the infra­struc­ture that could help him pull off his ambi­tions while lur­ing tal­ent with gar­gan­tuan com­pens­a­tion pack­ages.
+
+To smooth the path to dom­in­ance and avoid red tape, Zuck­er­berg has also pub­licly cour­ted Don­ald Trump, lav­ish­ing the US pres­id­ent with praise and soften­ing con­tent mod­er­a­tion rules to appease Maga fears about cen­sor­ship.
+
+If suc­cess­ful, the AI push could super­charge Meta’s already luc­rat­ive busi­ness, and restore the coveted status of “tech vis­ion­ary” to Zuck­er­berg, after his attempt to cre­ate an avatar-filled vir­tual meta­verse fell flat and received push­back from Wall Street.
+
+But the strategy has also cre­ated cor­por­ate whip­lash inside the Sil­icon Val­ley com­pany, as employ­ees have faced a rapid suc­ces­sion of lay-offs, restruc­tur­ings and exec­ut­ive reshuffles in one of the most tur­bu­lent peri­ods in its 20-year exist­ence.
+
+Investors are also increas­ingly skit­tish. Meta’s 2025 cap­ital expendit­ures are expec­ted to hit at least $70bn, up from $39bn the pre­vi­ous year, and the com­pany has star­ted under­tak­ing com­plex fin­an­cial man­oeuv­rings to help pay for the cost of new data centres and chips, tap­ping cor­por­ate bond mar­kets and private cred­it­ors.
+
+At its Octo­ber earn­ings, the Big Tech chief announced plans for even more spend­ing on AI next year that could top $100bn — but failed to provide much clar­ity on how exactly the tech­no­logy would be integ­rated into Meta’s exist­ing social media empire and mon­et­ised. Meta’s shares dropped more than 10 per cent, wip­ing more than $208bn from its valu­ation.
+
+Next year could be when Zuck­er­berg’s AI vis­ion starts to become real­ity — or shat­ters under pres­sure. Meta’s freshly hatched elite research lab is aim­ing to release a new AI model in the first quarter of next year, accord­ing to four people famil­iar with the mat­ter. The model, code­named Avo­cado intern­ally, will be built from scratch, rather than an iter­a­tion on its Llama large lan­guage mod­els, which under­per­formed rel­at­ive to peers.
+
+The com­pany, which declined to com­ment for this art­icle, is aim­ing for Avo­cado to have per­form­ance on a level with Google’s Gem­ini 2.5 upon release, and with Gem­ini 3 by the sum­mer, accord­ing to one per­son famil­iar with the mat­ter. Gem­ini 2.5 was released in March this year, while Gem­ini 3 was rolled out in Novem­ber to wide acclaim and is con­sidered to have leapfrogged OpenAI’s Chat­GPT.
+
+Either way, Avo­cado will need to be highly com­pet­it­ive with the flurry of recent model releases from Google, OpenAI and Anthropic — or fresh hires from Zuck­er­berg’s Great Tal­ent Heist could flee.
+
+“Mark Zuck­er­berg likes to play highs­takes poker. Other people like doing it in Las Vegas. He likes doing it with his com­pany,” says one former Meta exec­ut­ive who worked closely with him.
+
+“Mark has a keen sense of when the mar­ket is chan­ging and mov­ing quickly to catch up. Here, he is buy­ing momentum,” the per­son adds. “I would be wary of bet­ting against his abil­ity to deploy his resources to be suc­cess­ful. Will he ‘win’? I’m not sure. But he will not lose.”
+
+Zuck­er­berg’s declar­a­tion last year that he wanted to become an AI leader very rap­idly fell short of expect­a­tions. In April 2025, the social plat­form released Llama 4, the latest iter­a­tion of its open source large lan­guage model, which also powers its Meta AI chat­bot, to much fan­fare.
+
+But the model per­formed worse than those by rivals such as OpenAI and Google on jobs includ­ing cod­ing tasks and com­plex prob­lem solv­ing. The com­pany was also accused of try­ing to game the leader boards — where mod­els are com­pared and bench­marked by third parties — by sub­mit­ting a cus­tom­ised ver­sion to the rank­ing.
+
+The flop was a humi­li­at­ing blow to Zuck­er­berg’s plans to centre Meta’s future around gen­er­at­ive AI. In con­ver­sa­tions with mul­tiple cur­rent and former staff, as well as industry insiders, some blame the qual­ity of Meta’s train­ing data, and say the teams did not apply rig­or­ous test­ing meth­ods. Oth­ers cited cul­tural and organ­isa­tional issues: com­pet­ing cliques divided on decision-mak­ing, research and product teams not align­ing, or a lack of key AI lead­er­ship.
+
+Tij­men Blanke­voort, an AI researcher who left Meta this sum­mer, described the com­pany in a memo at the time as hav­ing a “waver­ing vis­ion that was tough for team mem­bers to enthu­si­ast­ic­ally rally behind” and “instabil­ity in team assign­ments, lead­ing to exper­i­ence not build­ing up and crys­tal­lising over time”.
+
+Another Meta insider says: “Our tools and products became frag­men­ted because so many teams were root­ing for their own products that no one was really think­ing about how they worked together.”
+
+Seek­ing to regain ground, Zuck­er­berg — whose repu­ta­tion for fix­at­ing on chosen projects is so well-estab­lished that exec­ut­ives call it the “Eye of Sauron” — escal­ated his ambi­tion. The over­arch­ing goal, Zuck­er­berg said in a memo in July, was to pur­sue “per­sonal super­in­tel­li­gence”, or AI that sur­passes human intel­li­gence, that can “fit in people’s pock­ets”.
+
+In par­tic­u­lar, he indic­ated that he would dir­ect devel­op­ment of the tech­no­logy towards “rela­tion­ships and cul­ture and cre­ativ­ity and hav­ing fun and enjoy­ing life” as much as improv­ing pro­ductiv­ity and other “grand prob­lems”.
+
+In inter­views and pod­casts, he also poin­ted to research show­ing that the aver­age Amer­ican has fewer than three real friends but wishes they had five times that num­ber. The answer, Zuck­er­berg pos­ited, was for Meta to offer AI that will be a com­pan­ion, as well as a sec­ret­ary, per­sonal shop­per or ghostwriter.
+
+In the longer term, he plans to fully embed the AI tech­no­logy within futur­istic Meta smart glasses that have an aug­men­ted real­ity dis­play and will allow wear­ers to inter­act seam­lessly with the world around them.
+
+To deliver on his dream, Zuck­er­berg has taken a two pronged approach. Firstly, he con­duc­ted a hir­ing blitzkrieg on prime tal­ent in the AI com­munity. Hun­dreds of poten­tial can­did­ates from rival labs at OpenAI, Anthropic, Apple, Google and Microsoft were tar­geted over the sum­mer for roles in a new VIP AI team with huge pay pack­ages and sign-on bonuses worth $100mn.
+
+The strategy marked a decis­ive shift away from rely­ing largely on what insiders call “Friends of Zuck­er­berg” (or FoZ) — long­time lieu­ten­ants at the com­pany from its early start-up days — to bring­ing in a wave of hungry AI nat­ive lead­ers.
+
+To steer the entire AI effort, renamed Meta Super­in­tel­li­gence Lab, Zuck­er­berg in June hired 28-year-old bil­lion­aire entre­pren­eur Alex­andr Wang, who foun­ded data labelling start-up Scale AI. Wang is also head­ing up Meta’s secret­ive TBD Lab, focused on devel­op­ing new fron­tier AI mod­els.
+
+Tasked with integ­rat­ing those mod­els into Meta’s product is Nat Fried­man, a pop­u­lar Sil­icon Val­ley investor and former head of cod­ing site Git­Hub. Meta spent $14bn for a 49 per cent stake in Wang’s Scale and a 49 per cent stake in Fried­man’s invest­ment group NFDG.
+
+A new design stu­dio focused on integ­rat­ing AI within hard­ware such as smart glasses will be headed by Alan Dye, a top Apple design exec­ut­ive. The com­pany has also shif­ted towards a buy­over-build strategy — scoop­ing up sev­eral smal­ler AI start-ups in areas such as wear­ables, agree­ing part­ner­ships to license tech­no­logy such as Mid­jour­ney’s video AI and using rivals’ mod­els intern­ally to boost their own work.
+
+While some insiders have wel­comed a new energy closer to Elon Musk’s “hard­core” work ethic, cracks have begun to emerge at an exec­ut­ive level. Ten­sions have been bub­bling between Wang and Zuck­er­berg, accord­ing to four people famil­iar with the mat­ter.
+
+Wang has told asso­ciates he finds Zuck­er­berg’s micro­man­age­ment of the com­pany’s AI work suf­foc­at­ing, sev­eral of the people say. Intern­ally, some staff ques­tion whether Wang is out of his depth, given his lack of exper­i­ence man­aging teams in a large cor­por­a­tion but also his expert­ise in AI data ser­vices rather than as an AI researcher push­ing tech­nical break­throughs.
+
+Fried­man is also under increas­ing pres­sure from Zuck­er­berg to move faster on deliv­er­ing AI products. Some in his team were frus­trated by what they felt was the rushed release of Vibes, Meta’s feed of AI-gen­er­ated videos, rolled out at haste in order to beat the release of OpenAI’s sim­ilar Sora.
+
+“Meta is in a tough spot as a new­comer. Few folks get hired into lead­er­ship and it’s such a ten­ure-driven place,” says one recent former insider. “When you’re a friend of Zuck you have more room for error.”
+
+At the same time, the com­pany recently laid off 600 work­ers from its AI team, cast­ing the cuts as designed to speed up decision-mak­ing pro­cesses. “The thing they are really try­ing to change is agil­ity — being quick to mar­ket, hav­ing the abil­ity to read the mar­ket signs in terms of how the mar­ket is chan­ging rap­idly,” says Arun Chandrasekaran, an AI ana­lyst at Gart­ner.
+
+Along­side the hir­ing bon­anza, Zuck­er­berg has opened up a fire hose of cash to build huge data centres powered by costly chips, escal­at­ing AI infra­struc­ture spend­ing.
+
+Investors have pun­ished Meta for the spree. Its shares fell sharply about 17 per cent in Novem­ber over con­cerns about its dwind­ling free cash flow, which ana­lysts project could fall from about $54bn to $20bn this year.
+
+“We’re going to get to a point at the end of next year where if they are to sus­tain a sim­ilar level of capex spend­ing, it’s going to eat up all your free cash flows or you’ve got to bring on a lot more debt,” says Uday Cher­uvu, port­fo­lio man­ager and ana­lyst at asset man­ager Hard­ing Loevner, which invests in Meta.
+
+Meta has become bolder and more exper­i­mental in its fin­an­cing. In late Octo­ber, the com­pany raised $30bn in one of the largest cor­por­ate bond offer­ings in US his­tory to fin­ance its infra­struc­ture ambi­tions.
+
+It also raised a fur­ther $27bn in debt from private credit mar­kets in late 2025 — the largest private debt deal on record — to build the colossal multi-gigawatt Hyper­ion data centre hub in Louisi­ana. In order to keep the loans off its bal­ance sheet, the deal was achieved via a spe­cial pur­pose vehicle that is 80 per cent owned by invest­ment group Blue Owl Cap­ital. The SPV will build and own Hyper­ion, which will be leased and oper­ated by Meta, whose rent will fund the interest pay­ments on the debt.
+
+By keep­ing the debt off its books, Meta can pre­serve its high credit rat­ing. But investors have been wary in past tech hype cycles about off-bal­ance sheet fin­an­cing and are likely to have ques­tions about Meta’s guar­an­tees to the SPV should the AI boom col­lapse.
+
+Those close to the com­pany say they will have hedged care­fully against such even­tu­al­it­ies. “Clearly, [chief fin­an­cial officer] Susan Li and the team recog­nise this risk and have worked hard to insu­late the com­pany from the fiscal carnage if it turns out there’s wild over­ca­pa­city in data centres,” the former Meta exec­ut­ive says.
+
+Meta’s shares jumped as much as 7 per cent when it emerged this month that the com­pany was shift­ing budget away from the meta­verse teams towards its AI wear­ables.
+
+For Zuck­er­berg’s part, he has argued that the real danger is in not being aggress­ive enough. “If we end up mis­spend­ing a couple of hun­dred bil­lion dol­lars, I think that [it] is going to be very unfor­tu­nate obvi­ously. But actu­ally I think the risk is higher on the other side,” he said recently in an inter­view on the Access pod­cast.
+
+“If you build too slowly . . . then you are just out of pos­i­tion on what I think is going to be the most import­ant tech­no­logy that enables the most new product and innov­a­tion and value cre­ation in his­tory.”
+
+Going for­ward, investors will be watch­ing how Meta’s Avo­cado model lands. There has been debate about whether it will be open source, or a closed pro­pri­et­ary model, mean­ing that con­sumers will have to pay to access it, with Wang push­ing for the lat­ter.
+
+Oth­ers argue that Meta must show how data from its user chat­bot con­ver­sa­tions can be fed into its advert­isingtar­get­ing machine, even if Zuck­er­berg him­self is reluct­ant to speak on the com­mer­cial aspect.
+
+“Mark needs to find a new ver­sion of [former chief oper­at­ing officer] Sheryl Sand­berg who can con­nect the dots for advert­isers on why Meta’s AI products can com­bine with advert­ising and tar­get­ing,” says Katie Har­bath, global affairs officer at Duco Experts and a former Meta pub­lic policy dir­ector. “It’s not cool and sexy [but] if they want to buy them­selves some run­way . . . it’s the low­est hanging fruit.”
+
+At the same time, Zuck­er­berg will also need the trust of users, law­makers and reg­u­lat­ors, and to reas­sure them that his products will not leak their private inform­a­tion or harm their kids.
+
+In August, leaked Meta policy guidelines revealed that the plat­form expressly allowed its chat­bots to have “sen­sual” and “romantic” chats with chil­dren — rev­el­a­tions that have promp­ted pub­lic out­cry around the world, and from US politi­cians on both sides of the aisle.
+
+Insiders say that Fried­man in par­tic­u­lar has been pri­or­it­ising safety. But David Evan Har­ris, a lec­turer at Uni­versity of Cali­for­nia, Berke­ley, and a former research man­ager in respons­ible AI at Meta, says that the policy guidelines revealed in August “will go down in his­tory as one of the most uncon­scion­able decisions ever made about AI”.
+
+“We see these big invest­ments in hir­ing tech­no­logy people, but I think that one of the biggest ways that the [race can be won] is on AI trust,” he adds.
+
+Insiders are bra­cing for more tumult ahead. “The more Mark is not seen at the same level as [OpenAI chief Sam] Alt­man or oth­ers, the more para­noid he’s going to get,” says Har­bath. “And the quicker the pivots are going to get.”
