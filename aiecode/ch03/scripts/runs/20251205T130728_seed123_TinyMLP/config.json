@@ -1,8 +1,0 @@
-{
-  "seed": 123,
-  "epochs": 30,
-  "lr": 0.001,
-  "batch_size": 64,
-  "model_name": "TinyMLP",
-  "comment": "xor demo with tracking/checkpoints"
-}

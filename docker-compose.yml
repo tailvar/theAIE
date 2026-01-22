@@ -2,8 +2,8 @@
 services:
   api:
     build:
-      context: aiecode
-      dockerfile: code/ch03/Dockerfile
+      context: theaiengineer-curriculum
+      dockerfile: code/capstone03/Dockerfile
     image: eng-ch02-api:compose
     ports:
       - "8000:8000"

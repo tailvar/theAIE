@@ -1,7 +1,0 @@
-README.md
-pyproject.toml
-src/attollm/__init__.py
-src/attollm.egg-info/PKG-INFO
-src/attollm.egg-info/SOURCES.txt
-src/attollm.egg-info/dependency_links.txt
-src/attollm.egg-info/top_level.txt
