@@ -13,10 +13,10 @@ Each Capstone is self contained and documented in its own directory. The top-lev
 The emphasis throughout is on <b>understanding, correctness</b> and <b>engineering discipline</b>: models are derived from first principles where possible, implementations are kepy explicit, and later systems are designed to be auditable, reproducible and extensible.
 
 # Capstone 1 - Gradient-Based Optimisation Case Study
-## Location: `aiecode/ch01/`
+## Location: `theaiengineer-curriculum/capstone01/`
 ## Notebook: `tae_capstone_wk1.ipynb`
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](
-https://colab.research.google.com/github/tailvar/theAIE/blob/master/aiecode/ch01/notebooks/tae_capstone_wk1.ipynb
+https://colab.research.google.com/github/tailvar/theAIE/blob/master/theaiengineer-curriculum/capstone01/notebooks/tae_capstone_wk1.ipynb
 )
 
 This first Capstone connects calculus-based analysis to first-order optimisation algorithms. Starting from an explicitly defined, non-smooth one-dimensional funcrtion, the project derives its piecewise structure, stationary points and global minima, then studies how gradient based methods behave when applied to it.
@@ -26,9 +26,9 @@ Gradient Descent, Heavy Ball momentum, Stochastic Gradient Descent and decaying 
 This capstone establishes a concrete intuition for optimisation dynamics that underpins all subsequent work with neural networks.
 
 # Capstone 2 - Tiny One-Hidden-Layer MLP (NumPy -> PyTorch)
-## Location: `aiecode/ch02/`
+## Location: `theaiengineer-curriculum/capstone02/`
 ## Notebook: `tae_capstone_wk2.ipynb`
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/tailvar/theAIE/blob/master/aiecode/ch02/notebooks/tae_capstone_wk2.ipynb)
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/tailvar/theAIE/blob/master/theaiengineer-curriculum/capstone02/notebooks/tae_capstone_wk2.ipynb)
 
 The second Capstone develops the mathematical or computational foundations of neural networks using a minimal multilayer perceptron trained on the XOR problem.
 
@@ -37,10 +37,10 @@ The project begins with a fully manual NumPy implementation of forward and backw
 Diagnostics such as loss curves, gradient norms, ReLU activity and decision boundary visualisations are used throughout to validate correctness and build intuition. The Capstone ensures that later use of deep learning frameworks rest on a clear understanding of what they compute internally.
 
 # Capstone 3 - Tiny Transformer Language Model
-## Location: `aiecode/ch03/`
+## Location: `theaiengineer-curriculum/capstone03/`
 ## Notebook: `tae_capstone_wk3.ipynb`
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](
-https://colab.research.google.com/github/tailvar/TheAIE/blob/master/aiecode/ch03/notebooks/tae_capstone_wk3.ipynb)
+https://colab.research.google.com/github/tailvar/TheAIE/blob/master/theaiengineer-curriculum/capstone03/notebooks/tae_capstone_wk3.ipynb)
 
 The third Capstone develops the core ideas behind modern transformer-based language model at a scale suitable for from-scratch implementation.
 
@@ -51,9 +51,9 @@ A small language model is trained on a tiny text corpus (Gordon Gekko's "Greed i
 This Capstone bridges the gap between neural-network mechanics and modern large language models.
 
 # Capstone 4 - Incident Command Agent (Model Context Protocol)
-## Location: `aiecode/ch04/Capstone`
+## Location: `theaiengineer-curriculum/capstone04/Capstone/`
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](
-https://colab.research.google.com/github/tailvar/theAIE/blob/master/aiecode/ch04/Capstone/notebook/incident_mcp_colab_demo.ipynb)
+https://colab.research.google.com/github/tailvar/theAIE/blob/master/theaiengineer-curriculum/capstone04/Capstone/notebook/incident_mcp_colab_demo.ipynb)
 
 The final Capstone shifts focus from model internals to system architecture. It implements an <b>Incident Command Agent</b> as a concrete demonstration of <b>Model Context Protocol</b>, showing how a Large Language Model (LLM) can be embedded safely and credibly within a larger engineering system.
 
