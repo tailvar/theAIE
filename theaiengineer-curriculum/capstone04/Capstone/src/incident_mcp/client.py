@@ -340,7 +340,7 @@ class IncidentCommandAgent:
         Chooses the single next best step (the "Plan" phase)
 
         Two modes:
-            1)  Rukes
+            1)  Rules
                 -   Deterministic Python logic chooses the next tool to call (No LLM)
             2)  OpenAI/Anthropic:
                 -   An LLM is used ONLY as a planner.
