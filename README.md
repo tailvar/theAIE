@@ -6,11 +6,11 @@
 </p>
 
 ## Summary
-This repository contains four Capstone projects completed as part of fulfilling the requirements of "the AI Engineer" program (https://theaiengineer.dev/). Together, they reflect a deliberate progression from underlying mathematics, through neural network mechanics and modern large language models, to the design of a fully structured, protocol-driven AI system embedded within a broader engineering context.
+This repository presents four Capstone projects developed as part of the <i>"the AI Engineer"</i> program (https://theaiengineer.dev/). Together, they form a deliberate progression from underlying mathematical foundations, through neural network mechanics and modern large language models, to the design of a fully structured, protocol-driven AI system embedded within a broader engineering context.
 
-Each Capstone is self contained and documented in its own directory. The purpose of this top-level README is to describe how the individual projects fit together both conceptually and technically.
+Each Capstone is self contained and documented in its own directory. This top-level README serves as a conceptual map, explaining how the individual projects fit together and how each stage builds on the previous one.
 
-The emphasis throughout is on <b>understanding, correctness</b> and <b>engineering discipline</b>: models are derived from first principles where possible, implementations are kepy explicit, and later systems are designed to be auditable, reproducible and extensible.
+The emphasis throughout is on <b>understanding, correctness</b> and <b>engineering discipline</b>: models are derived from first principles where possible, implementations are kept explicit, and later systems are designed to be auditable, reproducible and extensible.
 
 ## Capstones at a glance
 
