@@ -25,7 +25,7 @@ Key entry point - run from command line at this directory:
                 `export PLANNER_BACKEND=rules`
                 `python -m incident_mcp agent --root $(pwd)`
 
-Alternatively use the incident MCP demo notebook
+### Alternatively use the incident MCP demo notebook
 **[Incident MCP source](../theaiengineer-curriculum/capstone04/Capstone/notebook/incident_mcp_colab_demo.ipynb)**
 
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](
