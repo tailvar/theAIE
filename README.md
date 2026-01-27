@@ -13,7 +13,7 @@ Each Capstone is self contained and documented in its own directory. The purpose
 The emphasis throughout is on <b>understanding, correctness</b> and <b>engineering discipline</b>: models are derived from first principles where possible, implementations are kepy explicit, and later systems are designed to be auditable, reproducible and extensible.
 
 # Capstone 1 - Gradient-Based Optimisation Case Study
-## Location: **[capstone01_optimisation](capstone01_optimisation)**
+## Location: **[capstone01_optimisation](/capstone01_optimisation)**
 
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](
 https://colab.research.google.com/github/tailvar/theAIE/blob/master/theaiengineer-curriculum/capstone01/notebooks/tae_capstone_wk1.ipynb
