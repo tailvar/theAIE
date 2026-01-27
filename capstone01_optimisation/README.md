@@ -4,7 +4,7 @@ This capstone explores optimisation dynamics (gradient descent, momentum, SGD)
 using simple loss landscapes and visual diagnostics.
 
 ➡ Full implementation lives here:  
-[theaiengineer-curriculum/capstone01/](theaiengineer-curriculum/capstone01/)
+**[Capstone 1 source folder](theaiengineer-curriculum/capstone01/)**
 
 Start here:  
-[wk1_calculus_and_optimisation.ipynb](theaiengineer-curriculum/capstone01/wk1_calculus_and_optimisation.ipynb)
+**[Week 1 — Calculus and Optimisation (notebook)](theaiengineer-curriculum/capstone01/wk1_calculus_and_optimisation.ipynb)**
