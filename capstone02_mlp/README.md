@@ -5,7 +5,7 @@ starting with NumPy and manual backpropagation, then moving to PyTorch and
 autograd.
 
 ➡ Full implementation lives here:  
-**[Capstone 2 source folder](../theaiengineer-curriculum/capstone02/)**
+**[Capstone 2 source folder and README](../theaiengineer-curriculum/capstone02/)**
 
 Start here:  
 **[Week 2 — Neural Networks from Scratch (notebook)](

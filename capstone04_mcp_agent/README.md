@@ -5,7 +5,7 @@ Model Context Protocol (MCP). The agent follows an Observe → Plan → Act → 
 loop and interacts with tools and resources in a controlled, auditable way.
 
 ➡ Full implementation lives here:  
-**[Capstone 4 source folder](../theaiengineer-curriculum/capstone04/Capstone/)**
+**[Capstone 4 source folder and README](../theaiengineer-curriculum/capstone04/Capstone/)**
 
 Key entry point - run from command line at this directory:  
 **[Incident MCP source](../theaiengineer-curriculum/capstone04/Capstone/src/)**
