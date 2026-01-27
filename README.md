@@ -97,5 +97,14 @@ Each Capstone directory contains its own README or notebook with detailed explan
 
 For hands-on work, start in the individual Capstone directories and follow the instructions provided there.
 
+# Installation and setup
+
+This repository relies on a conda environment for dependency management.
+
+    git clone https://github.com/tailvar/theAIE.git
+    cd theAIE
+    conda env create -f environment.yml
+    conda activate theAIE
+
 # <b>Summary</b>
 <b>This repository demonstrates an end-to-end journey through modern AI engineering: from calculus and optimisation, through neural networks and transformers to the deisgn of structured, auditable agent systems. The focus throughout is not on treating models as black boxes, but on building understanding and control around how they learn reason and act within real systems</b>.
