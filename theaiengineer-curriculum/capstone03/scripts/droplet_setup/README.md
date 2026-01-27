@@ -158,9 +158,7 @@ git remote add origin https://github.com/tailvar/aie_gpu_project.git
 git branch -M main
 git push -u origin main
 ```
-
 Open project in PyCharm.
-
 
 ### Droplet First Time Setup
 
@@ -182,7 +180,6 @@ root@CONTAINER_ID:/workspace#
 
 Venv is already active.
 
----
 
 ## Normal Workflow
 
