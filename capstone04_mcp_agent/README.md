@@ -7,7 +7,7 @@ loop and interacts with tools and resources in a controlled, auditable way.
 ➡ Full implementation lives here:  
 **[Capstone 4 source folder](../theaiengineer-curriculum/capstone04/Capstone/)**
 
-Key entry point:  
+Key entry point - run from command line at this directory:  
 **[Incident MCP source](../theaiengineer-curriculum/capstone04/Capstone/src/)**
 
 ### Set up the project root:
@@ -24,3 +24,9 @@ Key entry point:
  
                 `export PLANNER_BACKEND=rules`
                 `python -m incident_mcp agent --root $(pwd)`
+
+Alternatively use the incident MCP demo notebook
+**[Incident MCP source](../theaiengineer-curriculum/capstone04/Capstone/notebook/incident_mcp_colab_demo.ipynb)**
+
+![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](
+https://colab.research.google.com/github/tailvar/theAIE/blob/master/theaiengineer-curriculum/capstone04/Capstone/notebook/incident_mcp_colab_demo.ipynb)
