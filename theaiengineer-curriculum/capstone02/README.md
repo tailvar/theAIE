@@ -13,14 +13,14 @@ Starting with a **fully manual NumPy implementation** of forward and backward pr
 
 The goal is to understand, from first principles, how affine layers, nonlinearities, gradients, and optimisation interact inside a minimal MLP trained on the classic **XOR** problem.
 
----
+
 ### Training Step Overview
 
 Every iteration of neural-network training follows the same computational pipeline:
 
 1. **`zero_grad()`**  
    Clears any gradients left over from the previous step.  
-   (PyTorch accumulates gradients by default, so clearing them is essential.)
+   (PyTorch accumulates gradients by default, so clearing them is essential).
 
 2. **Forward pass**  
    Inputs flow through the network to produce predictions using the current parameters:  
@@ -50,7 +50,6 @@ Together, these operations form the core **learning loop** in both the NumPy and
 
     [ zero_grad ] ──▶ [ forward ] ──▶ [ loss ] ──▶ [ backward ] ──▶ [ step ]
 
----
 
 ## Contents
 
@@ -95,7 +94,6 @@ Two PyTorch abstractions are used:
   - nn.Sequential  
 - Shows how each implementation “bends” the input space to separate the XOR classes.
 
----
 
 ## Results Summary
 
@@ -106,17 +104,15 @@ Two PyTorch abstractions are used:
 
 Across all implementations, the network reliably learns the nonlinear XOR boundary using only one hidden layer.
 
----
 
 ## Data
 
 No external data sources are required. The dataset consists of **synthetic XOR-style points** uniformly sampled from the square $[-1, 1]^2$, labelled according to the sign of $(x_1 \cdot x_2)$. All experiments run deterministically using fixed random seeds.
 
----
 
 ## How to Run
 
-Open the notebook in JupyterLab or Google Colab and run all cells in order.
+The notebook tae_capstone_wk2.ipynb is contained in the notebooks directory. Open the notebook in JupyterLab or Google Colab and run all cells in order.
 
 The notebook requires:  
 - NumPy  
@@ -125,4 +121,3 @@ The notebook requires:
 
 All computations are CPU-friendly and complete in seconds.
 
----

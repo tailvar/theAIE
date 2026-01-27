@@ -2,7 +2,7 @@
 https://colab.research.google.com/github/tailvar/TheAIE/blob/master/theaiengineer-curriculum/capstone03/notebooks/tae_capstone_wk3.ipynb)
 # **Tiny Transformer – Architecture, Workflow, and Reproducibility**
 
-This project implements a compact GPT-style Transformer model alongside a fully reproducible, GPU-accelerated development and training stack. The environment is designed to be modular, cost-efficient, and seamless to work with from a local IDE while executing all computation remotely on a GPU.
+This third capstone project implements a compact GPT-style Transformer model alongside a fully reproducible, GPU-accelerated development and training stack. The environment is designed to be modular, cost-efficient, and seamless to work with from a local IDE while executing all computation remotely on a GPU.
 
 ---
 
@@ -11,39 +11,26 @@ This project implements a compact GPT-style Transformer model alongside a fully 
 This repository includes:
 
 - A minimal Transformer language model implemented in PyTorch  
-- Word-level and character-level tokenisation  
+- Both word-level and character-level tokenisation  
 - Scaled dot-product attention tests and causal mask verification  
 - A single-block Transformer decomposition test  
 - Sampling algorithms (greedy, temperature, top-k, top-p)  
 - Training vs validation loss charting  
 - Infrastructure automation for reproducible GPU-based development
 
-The goal is to create an experimental environment that reveals *how transformers really work* and how they behave under extreme data constraints.
+The overarching goal of the project is to create an experimental environment that exposes how transformers actually work internally, and how their behaviour changes under extreme data constraints, rather than simply treating them as opaque black boxes.
 
----
 
 ## **Transformer Experiment Scope**
 
-### **Core Components**
-- Token + positional embeddings (sinusoidal)  
-- Multi-head self-attention  
-- Causal masking  
-- Feed-forward networks  
-- LayerNorm + residual connections  
-- Autoregressive LM head
+At the core of the project is a standard but fully transparent Transformer architecture. The model is built from token embeddings combined with sinusoidal positional encodings, followed by a multi-head self-attention mechanism with explicit causal masking. This is then passed through position-wise feed-forward networks, with LayerNorm and residual connections applied throughout, and terminated by an autoregressive language-model head. Each of these components is implemented in a way that allows intermediate activations to be inspected and tested independently.
 
-### **Sampling**
-- Greedy decoding  
-- Temperature scaling  
-- Top-k sampling  
-- Top-p (nucleus) sampling  
-- Combined temperature + nucleus sampling
+The sampling framework is deliberately broad, covering greedy decoding, temperature-scaled sampling, top-k sampling, top-p (nucleus) sampling, and combinations of temperature with nucleus sampling. This makes it possible to study how different decoding strategies affect output diversity, stability, and coherence, and to understand the practical trade-offs involved in moving from deterministic to stochastic generation.
 
----
 
 ## **Architecture**
 
-The project runs on a **DigitalOcean GPU Droplet** using a fully containerised execution model. All machine-learning computation happens inside a **Docker container** running on the droplet, which ensures a consistent CUDA-enabled environment at all times.
+The project runs on a **DigitalOcean GPU Droplet** using a fully containerised execution model. All machine-learning computation happens inside a **Docker container** running on the droplet, which ensures a consistent CUDA-enabled environment at all times. ***Instructions on how to set up the droplet*** thats in a docker container are inncluded in the directory /scripts/droplet_setup/README.md with the bash scripts required to set up the digital ocean droplet so it is production ready.
 
 ### **GPU Droplet + Docker Runtime**
 - Dedicated NVIDIA GPU hardware  
@@ -67,21 +54,21 @@ Although compute runs remotely, development occurs locally:
 
 Jupyter notebooks run in the container and are accessed through an SSH-forwarded port, giving you a local browsing experience powered by remote GPU compute.
 
----
 
 ## **Automated Environment Scaffolding**
 
 Reproducibility and ease of setup are achieved using two automation layers:
 
-### **Local Scaffolding Script**
+### **Local Scaffolding Script (aie_full_setup.sh)**
 
--Installs system dependencies such as Docker, Git, Python, and virtual-environment tools.
--Pulls the latest version of the project from GitHub.
--Builds the project’s Docker image.
--Creates and runs a GPU-enabled container with the project directory mounted into it.
--Creates and activates a Python virtual environment inside the container.
--Installs all Python dependencies and optionally CUDA-enabled PyTorch.
--Drops the user into an interactive shell inside the container, ready for training.
+
+- Installs system dependencies such as Docker, Git, Python, and virtual-environment tools.
+- Pulls the latest version of the project from GitHub.
+- Builds the project’s Docker image.
+- Creates and runs a GPU-enabled container with the project directory mounted into it.
+- Creates and activates a Python virtual environment inside the container.
+- Installs all Python dependencies and optionally CUDA-enabled PyTorch.
+- Drops the user into an interactive shell inside the container, ready for training.
 
 ## Data
 

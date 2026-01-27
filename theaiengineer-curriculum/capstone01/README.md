@@ -6,16 +6,16 @@ https://colab.research.google.com/github/tailvar/theAIE/blob/master/theaienginee
 
 ## Overview
 
-This project explores the relationship between calculus-based analysis and first-order optimization methods.  
-Starting from the one-dimensional function  
+This project explores how concepts from calculus-based analysis relate to first-order optimisation methods.
+
+Starting from the one-dimensional function:  
 
 $f(x) = \left| \tfrac{1}{2}x^{3} - \tfrac{3}{2}x^{2} \right| + \tfrac{1}{2}x$
 
-Notebook analyses its shape, stationary points, and global minima, then examine how various gradient-based algorithms behave when applied to it.
+the notebook analyses its shape, stationary points, and global minima, then examine how various gradient-based algorithms behave when applied to it.
 
 The goal is to understand how **learning rate (η)**, **momentum (β)**, **noise (σ)**, and **decay (γ)** influence convergence, stability, and performance near non-smooth points (such as the kink at \(x = 3\)).
 
----
 
 ## Contents
 
@@ -54,7 +54,6 @@ Each run computes:
 
 These metrics quantify how efficiently each algorithm reaches the vicinity of the optimum.
 
----
 
 ## Protocol Summary
 
@@ -69,7 +68,6 @@ These metrics quantify how efficiently each algorithm reaches the vicinity of th
 
 All stochastic runs use a **reproducible random number generator** via `np.random.default_rng(seed)`.
 
----
 
 ## Results Summary
 
@@ -78,16 +76,14 @@ All stochastic runs use a **reproducible random number generator** via `np.rando
 - Decaying η schemes improve convergence smoothness, particularly in noisy settings.  
 - Across all methods, higher η accelerates movement toward x*, but small η may get stuck oscillating near the kink at x = 3.
 
----
 
 ## Data
 
 No external datasets are used. All results are generated from the analytical function \( f(x) \) above using Python (NumPy, Matplotlib) within a Jupyter or Colab environment.
 
----
 
 ## How to Run
 
-Clone or open the notebook in JupyterLab or Google Colab.
+The notebook tae_capstone_wk1.ipynb is contained in the notebooks directory. Clone or open the notebook in JupyterLab or Google Colab.
 
 Run all cells in order.

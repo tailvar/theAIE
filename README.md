@@ -1,4 +1,4 @@
-# <b><u>theaiengineer</u> - Curriculum Overview
+# <b><u>theaiengineer - Curriculum Overview</u>
 
 <p align="left">
   <img src="assets/tae_logo.png" width="80" alt="TAE logo">
@@ -6,9 +6,9 @@
 </p>
 
 ## Summary
-This repository contains four Capstone projects completed as part of the AI Engineer course https://theaiengineer.dev/ Together, they trace a deliberate progression from mathematical foundations, through neural network mechanics and modern large language models, to the deisgn of a fully structured, protocol-driven AI system embedded in a broader engineering context.
+This repository contains four Capstone projects completed as part of fulfilling the requirements of "the AI Engineer" program (https://theaiengineer.dev/). Together, they reflect a deliberate progression from underlying mathematics, through neural network mechanics and modern large language models, to the design of a fully structured, protocol-driven AI system embedded within a broader engineering context.
 
-Each Capstone is self contained and documented in its own directory. The top-level purpose of this repository is to show hoe the individual projects fit together conceptually and technically.
+Each Capstone is self contained and documented in its own directory. The purpose of this top-level README is to describe how the individual projects fit together both conceptually and technically.
 
 The emphasis throughout is on <b>understanding, correctness</b> and <b>engineering discipline</b>: models are derived from first principles where possible, implementations are kepy explicit, and later systems are designed to be auditable, reproducible and extensible.
 
@@ -19,11 +19,11 @@ The emphasis throughout is on <b>understanding, correctness</b> and <b>engineeri
 https://colab.research.google.com/github/tailvar/theAIE/blob/master/theaiengineer-curriculum/capstone01/notebooks/tae_capstone_wk1.ipynb
 )
 
-This first Capstone connects calculus-based analysis to first-order optimisation algorithms. Starting from an explicitly defined, non-smooth one-dimensional funcrtion, the project derives its piecewise structure, stationary points and global minima, then studies how gradient based methods behave when applied to it.
+In this first Capstone, the aim is to investigate how concepts from calculus-based analysis relate to first-order optimisation algorithms. Starting from an explicitly defined, non-smooth one-dimensional function, the project derives its piecewise structure, stationary points and global minima, then studies how gradient based methods behave when applied to it.
 
 Gradient Descent, Heavy Ball momentum, Stochastic Gradient Descent and decaying learning-rate schedules are analysed side-by-side. The effects of step size, momentum, noise and decay are visualised through trajectories and convergence diagnostics, with particular attention paid to behavious near non-smooth points.
 
-This capstone establishes a concrete intuition for optimisation dynamics that underpins all subsequent work with neural networks.
+This Capstone helps build an intuitive understanding of optimisation dynamics that supports the later work on neural networks.
 
 # Capstone 2 - Tiny One-Hidden-Layer MLP (NumPy -> PyTorch)
 ## Location: `theaiengineer-curriculum/capstone02/`
@@ -42,7 +42,7 @@ Diagnostics such as loss curves, gradient norms, ReLU activity and decision boun
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](
 https://colab.research.google.com/github/tailvar/TheAIE/blob/master/theaiengineer-curriculum/capstone03/notebooks/tae_capstone_wk3.ipynb)
 
-The third Capstone develops the core ideas behind modern transformer-based language model at a scale suitable for from-scratch implementation.
+The third Capstone develops the core ideas behind modern transformer-based language model at a "toy" scale which makes the project suitable for from-scratch implementation.
 
 Beginning with sequence modelling and content-based attention, the project derives scaled dot-product attention and assembles a GPT-style decoder-only transformmer from fundamental components: multi-head self attention, feed-forward networks, residual connections, layer normalisation and positional encodings.
 
@@ -55,7 +55,7 @@ This Capstone bridges the gap between neural-network mechanics and modern large 
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](
 https://colab.research.google.com/github/tailvar/theAIE/blob/master/theaiengineer-curriculum/capstone04/Capstone/notebook/incident_mcp_colab_demo.ipynb)
 
-The final Capstone shifts focus from model internals to system architecture. It implements an <b>Incident Command Agent</b> as a concrete demonstration of <b>Model Context Protocol</b>, showing how a Large Language Model (LLM) can be embedded safely and credibly within a larger engineering system.
+The final Capstone shifts focus from model internals to system architecture. It implements an <b>Incident Command Agent</b> in order to provide a solid demonstration of the capabilities of the <b>Model Context Protocol</b>, and showing how a Large Language Model (LLM) can be embedded safely and credibly within a larger engineering system.
 
 The agent operates and explicit <b>Observe -> Plan -> Act -> Learn</b> loop. It observes structured resources (alerts, telemetry, runbooks, memory), selects the next action using either a <b>Large Language Model</b> or <b>deterministic rules</b>, executes that action through a strictly designed tool interface, and records compact memory deltas and telemetry for replay and audit.
 
@@ -68,7 +68,7 @@ For demonstration purposes, the Capstone can also be run in a <b>Google Colab en
 
 In practice, the Colab stdio configuration is most suitable for the <b>deterministic rules planner</b>. This enables a complete, zero-cost demonstration of MCP concepts - tools, resources, memory, telemetry, replay amd human handoff - without eequiring external API keys or persistent secrets.
 
-Running the agent in <b>LLM planning mode</b> rfom Colab is possible, but requires explicit configuration of API cerdentials and acceptance of Colabs limitations around secret management and long-running processes. For this reason, LLM-based planning is considered an <b>advanced or optional variant</b> in Colab rather than the canonical execution path.
+Running the agent in <b>LLM planning mode</b> from Colab is possible, but requires explicit configuration of API cerdentials and acceptance of Colabs limitations around secret management and long-running processes. For this reason, LLM-based planning is considered an <b>advanced or optional variant</b> in Colab rather than the canonical execution path.
 
 A more advanced demonstration runs the MCP server inside Colab as a network service (WebSockets) and connects to it from a local agent via a public tunnel (e.g. Cloudflared or ngrok). This allows LLM planning to occur locally while tools and resources live remotely, but introduces additional operational complexity. For assessment and clarity <b>local stdio execution remains the recommended and canonical mode</b>.
 

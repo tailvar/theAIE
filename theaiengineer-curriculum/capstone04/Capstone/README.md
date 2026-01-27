@@ -88,7 +88,7 @@ Using stdio pipes rather than WebSockets or HTTP is an intentional choice for th
 The project is designed to be run locally using standard Python tooling:
     
     1.  Create and activate a Python 3.10+ virtual environment.
-    2.  cd /aiecode/ch04/Capstone/
+    2.  cd theaiengineer-curriculum/capstone04/Capstone/src
     3.  Set up the project root:
             `export INCIDENT_MCP_ROOT=$(pwd)` -> this can also live in your .env file
     4.  Install dependencies

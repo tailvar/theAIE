@@ -25,63 +25,100 @@ class MCPStdioServer:
     """
 
     def __init__(
-        self,
-        *,
-        root_dir: Optional[Path] = None,
-        tools_path: Optional[Path] = None,
-        resources_path: Optional[Path] = None,
-        alerts_latest_path: Optional[Path] = None,
-        telemetry_recent_path: Optional[Path] = None,
-        runbook_dir: Optional[Path] = None,
-        memory_path: Optional[Path] = None,
-        stderr_banner: bool = True,
+            self,
+            *,
+            root_dir: Optional[Path] = None,
+            tools_path: Optional[Path] = None,
+            resources_path: Optional[Path] = None,
+            alerts_latest_path: Optional[Path] = None,
+            telemetry_recent_path: Optional[Path] = None,
+            runbook_dir: Optional[Path] = None,
+            memory_path: Optional[Path] = None,
+            stderr_banner: bool = True,
     ) -> None:
         import os
 
         # ------------------------------------------------------------------
         # Resolve project root (priority: explicit arg > env var > fallback)
         # This file lives at ".../Capstone/src/incident_mcp/server.py"
+        # default_root => ".../Capstone"
         # ------------------------------------------------------------------
-        default_root = Path(__file__).resolve().parents[2]  # Capstone/
+        default_root = Path(__file__).resolve().parents[2]
         env_root = os.getenv("INCIDENT_MCP_ROOT")
 
         if root_dir is not None:
-            self.root = Path(root_dir).resolve()
+            self.root = Path(root_dir).expanduser().resolve()
         elif env_root:
-            self.root = Path(env_root).resolve()
+            self.root = Path(env_root).expanduser().resolve()
         else:
             self.root = default_root.resolve()
+
+        # If someone accidentally passed ".../Capstone/src" as root, normalize it.
+        # (Common when running from inside src/)
+        if self.root.name == "src" and (self.root.parent / "config").exists():
+            self.root = self.root.parent.resolve()
 
         # ------------------------------------------------------------------
         # Standard directory layout under project root
         # ------------------------------------------------------------------
-        self.config_dir = self.root / "config"
-        self.data_dir = self.root / "data"
+        self.config_dir = (self.root / "config").resolve()
+        self.data_dir = (self.root / "data").resolve()
+
+        # Ensure expected dirs exist (harmless if already present)
+        self.config_dir.mkdir(parents=True, exist_ok=True)
+        self.data_dir.mkdir(parents=True, exist_ok=True)
+
+        # ------------------------------------------------------------------
+        # Helper: resolve optional paths.
+        # If caller passes a relative path, treat it as relative to project root.
+        # ------------------------------------------------------------------
+        def _resolve_under_root(p: Optional[Path], default_rel: Path) -> Path:
+            if p is None:
+                return (self.root / default_rel).resolve()
+            p = Path(p).expanduser()
+            return p.resolve() if p.is_absolute() else (self.root / p).resolve()
 
         # ------------------------------------------------------------------
         # Config files (schemas, tool definitions, resource catalog)
         # ------------------------------------------------------------------
-        self.tools_path = tools_path or (self.config_dir / "tools.json")
-        self.resources_path = resources_path or (self.config_dir / "resources.json")
+        self.tools_path = _resolve_under_root(tools_path, Path("config/tools.json"))
+        self.resources_path = _resolve_under_root(resources_path, Path("config/resources.json"))
+
+        # Fail early with a helpful error message if config is missing
+        if not self.tools_path.exists():
+            raise FileNotFoundError(
+                f"Missing tools.json. Expected at: {self.tools_path}\n"
+                f"Resolved project root: {self.root}\n"
+                f"Hint: ensure Capstone/config/tools.json exists, or pass tools_path=..., "
+                f"or set INCIDENT_MCP_ROOT to the Capstone directory."
+            )
+        if not self.resources_path.exists():
+            raise FileNotFoundError(
+                f"Missing resources.json. Expected at: {self.resources_path}\n"
+                f"Resolved project root: {self.root}\n"
+                f"Hint: ensure Capstone/config/resources.json exists, or pass resources_path=..., "
+                f"or set INCIDENT_MCP_ROOT to the Capstone directory."
+            )
 
         # ------------------------------------------------------------------
         # Resource backing files
         # ------------------------------------------------------------------
-        self.alerts_latest_path = alerts_latest_path or (
-            self.data_dir / "alerts" / "latest.json"
+        self.alerts_latest_path = _resolve_under_root(
+            alerts_latest_path, Path("data/alerts/latest.json")
         )
-        self.telemetry_recent_path = telemetry_recent_path or (
-            self.data_dir / "telemetry" / "recent.json"
+        self.telemetry_recent_path = _resolve_under_root(
+            telemetry_recent_path, Path("data/telemetry/recent.json")
         )
 
-        self.runbook_dir = runbook_dir or (self.data_dir / "runbooks")
+        self.runbook_dir = _resolve_under_root(runbook_dir, Path("data/runbooks"))
+        self.runbook_dir.mkdir(parents=True, exist_ok=True)
 
         # ------------------------------------------------------------------
         # Memory store (persistent JSONL)
         # ------------------------------------------------------------------
-        mem_dir = self.data_dir / "memory"
+        mem_dir = (self.data_dir / "memory").resolve()
         mem_dir.mkdir(parents=True, exist_ok=True)
-        self.memory_path = memory_path or (mem_dir / "memory.jsonl")
+        self.memory_path = _resolve_under_root(memory_path, Path("data/memory/memory.jsonl"))
 
         # ------------------------------------------------------------------
         # Load static server configuration
