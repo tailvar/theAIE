@@ -28,5 +28,5 @@ Key entry point - run from command line at this directory:
 Alternatively use the incident MCP demo notebook
 **[Incident MCP source](../theaiengineer-curriculum/capstone04/Capstone/notebook/incident_mcp_colab_demo.ipynb)**
 
-![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](
 https://colab.research.google.com/github/tailvar/theAIE/blob/master/theaiengineer-curriculum/capstone04/Capstone/notebook/incident_mcp_colab_demo.ipynb)
