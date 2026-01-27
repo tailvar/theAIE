@@ -8,7 +8,7 @@ loop and interacts with tools and resources in a controlled, auditable way.
 **[Capstone 4 source folder](../theaiengineer-curriculum/capstone04/Capstone/)**
 
 Key entry point:  
-**[Incident MCP source](../theaiengineer-curriculum/capstone04/Capstone/incident_mcp/)**
+**[Incident MCP source](../theaiengineer-curriculum/capstone04/Capstone/src/)**
 
 ### Set up the project root:
         `export INCIDENT_MCP_ROOT=$(pwd)` -> this can also live in your .env file
@@ -20,7 +20,7 @@ Key entry point:
 
                 `export PLANNER_BACKEND=anthropic` # or openai
                 `python -m incident_mcp agent --root $(pwd)`
-- or ib Rules mode:
+- or alternatively, run the agent in Rules mode:
  
                 `export PLANNER_BACKEND=rules`
                 `python -m incident_mcp agent --root $(pwd)`
