@@ -11,14 +11,16 @@ Key entry point:
 **[Incident MCP source](../theaiengineer-curriculum/capstone04/Capstone/incident_mcp/)**
 
 ### Set up the project root:
-        export INCIDENT_MCP_ROOT=$(pwd) -> this can also live in your .env file
+        `export INCIDENT_MCP_ROOT=$(pwd)` -> this can also live in your .env file
 ### Install dependencies
-- In a terminal, Start the MCP server:
-        python -m incident_mcp server
-- In a second terminal, run the agent:
-        -   LLM mode:
-                export PLANNER_BACKEND=anthropic # or openai
-                python -m incident_mcp agent --root $(pwd)
-        -   Rules mode:
-                export PLANNER_BACKEND=rules
-                python -m incident_mcp agent --root $(pwd)`
+### In a terminal, start the MCP server:
+        `python -m incident_mcp server`
+
+- In a second terminal, run the agent in LLM mode:
+
+                `export PLANNER_BACKEND=anthropic` # or openai
+                `python -m incident_mcp agent --root $(pwd)`
+- or ib Rules mode:
+ 
+                `export PLANNER_BACKEND=rules`
+                `python -m incident_mcp agent --root $(pwd)`
