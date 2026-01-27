@@ -20,7 +20,6 @@ Once set up, you only ever:
 - run experiments inside the container,
 - commit and push from the droplet.
 
----
 
 ## Cheat Sheet
 
@@ -60,7 +59,6 @@ vim scripts/train_model.py
 You never delete any of the three layers.  
 You simply respect where each one lives and what it is responsible for.
 
----
 
 ## Git Identity
 
@@ -87,8 +85,6 @@ git config --global user.name "Piers Watson"
 git config --global user.email "piers.watson1@bigpond.com"
 ```
 
----
-
 ## Roles of the Three Main Files
 
 ### 1. init_aie_project.sh  
@@ -103,7 +99,6 @@ Creates project skeleton at:
 Used once at project creation.  
 Never run on droplet or container.
 
----
 
 ### 2. Dockerfile  
 (Container definition)
@@ -115,8 +110,6 @@ Defines:
 
 Used only by Docker on the droplet.  
 Controls what exists inside the container.
-
----
 
 ### 3. aie_full_setup.sh  
 (Droplet bootstrap – the “do everything” script)
@@ -152,7 +145,6 @@ It performs:
 
 This script is idempotent and safe to re-run.
 
----
 
 ## Fresh End-to-End Setup
 
@@ -169,7 +161,6 @@ git push -u origin main
 
 Open project in PyCharm.
 
----
 
 ### Droplet First Time Setup
 
@@ -208,8 +199,6 @@ Exit container:
 exit
 ```
 
----
-
 ## Committing and Pushing (Always on Droplet)
 
 ```bash
@@ -221,8 +210,6 @@ git push
 ```
 
 Never commit from inside the container.
-
----
 
 ## Re-entering Container
 
@@ -239,8 +226,6 @@ Or simply:
 cd /root
 ./aie_full_setup.sh
 ```
-
----
 
 ## PyCharm Remote Interpreter
 
@@ -262,8 +247,6 @@ Start terminal:
 ```
 Tools → Start SSH Session
 ```
-
----
 
 ## Jupyter Lab Over SSH
 
