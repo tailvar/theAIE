@@ -1,8 +1,8 @@
 # <b><u>theaiengineer - Curriculum Overview</u>
 
 <p align="left">
-  <img src="assets/tae_logo.png" width="80" alt="TAE logo">
-  <img src="assets/LCM_logo.png" width="120" alt="LCM logo">
+  <img src="tae_assets/tae_logo.png" width="80" alt="TAE logo">
+  <img src="tae_assets/LCM_logo.png" width="120" alt="LCM logo">
 </p>
 
 ## Summary
@@ -13,8 +13,8 @@ Each Capstone is self contained and documented in its own directory. The purpose
 The emphasis throughout is on <b>understanding, correctness</b> and <b>engineering discipline</b>: models are derived from first principles where possible, implementations are kepy explicit, and later systems are designed to be auditable, reproducible and extensible.
 
 # Capstone 1 - Gradient-Based Optimisation Case Study
-## Location: `theaiengineer-curriculum/capstone01/`
-## Notebook: `tae_capstone_wk1.ipynb`
+## Location: **[capstone01_optimisation](../theaiengineer-curriculum/capstone01_optimisation)**
+
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](
 https://colab.research.google.com/github/tailvar/theAIE/blob/master/theaiengineer-curriculum/capstone01/notebooks/tae_capstone_wk1.ipynb
 )
@@ -26,8 +26,8 @@ Gradient Descent, Heavy Ball momentum, Stochastic Gradient Descent and decaying 
 This Capstone helps build an intuitive understanding of optimisation dynamics that supports the later work on neural networks.
 
 # Capstone 2 - Tiny One-Hidden-Layer MLP (NumPy -> PyTorch)
-## Location: `theaiengineer-curriculum/capstone02/`
-## Notebook: `tae_capstone_wk2.ipynb`
+## Location: **[capstone02_mlp](../theaiengineer-curriculum/capstone02_mlp)**
+
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/tailvar/theAIE/blob/master/theaiengineer-curriculum/capstone02/notebooks/tae_capstone_wk2.ipynb)
 
 The second Capstone develops the mathematical or computational foundations of neural networks using a minimal multilayer perceptron trained on the XOR problem.
@@ -37,8 +37,8 @@ The project begins with a fully manual NumPy implementation of forward and backw
 Diagnostics such as loss curves, gradient norms, ReLU activity and decision boundary visualisations are used throughout to validate correctness and build intuition. The Capstone ensures that later use of deep learning frameworks rest on a clear understanding of what they compute internally.
 
 # Capstone 3 - Tiny Transformer Language Model
-## Location: `theaiengineer-curriculum/capstone03/`
-## Notebook: `tae_capstone_wk3.ipynb`
+## Location: **[capstone03_transformer_llm](../theaiengineer-curriculum/capstone03_transformer_llm)**
+
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](
 https://colab.research.google.com/github/tailvar/TheAIE/blob/master/theaiengineer-curriculum/capstone03/notebooks/tae_capstone_wk3.ipynb)
 
@@ -51,7 +51,8 @@ A small language model is trained on a tiny text corpus (Gordon Gekko's "Greed i
 This Capstone bridges the gap between neural-network mechanics and modern large language models.
 
 # Capstone 4 - Incident Command Agent (Model Context Protocol)
-## Location: `theaiengineer-curriculum/capstone04/Capstone/`
+## Location: **[capstone04_mcp_agent](../theaiengineer-curriculum/capstone04_mcp_agent)**
+
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](
 https://colab.research.google.com/github/tailvar/theAIE/blob/master/theaiengineer-curriculum/capstone04/Capstone/notebook/incident_mcp_colab_demo.ipynb)
 
