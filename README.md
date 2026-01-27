@@ -1,4 +1,4 @@
-# <b><u>theaiengineer - Curriculum Overview</u>
+# <b><u>theaiengineer</u>
 
 <p align="left">
   <img src="tae_assets/tae_logo.png" width="80" alt="TAE logo">
@@ -11,6 +11,16 @@ This repository contains four Capstone projects completed as part of fulfilling 
 Each Capstone is self contained and documented in its own directory. The purpose of this top-level README is to describe how the individual projects fit together both conceptually and technically.
 
 The emphasis throughout is on <b>understanding, correctness</b> and <b>engineering discipline</b>: models are derived from first principles where possible, implementations are kepy explicit, and later systems are designed to be auditable, reproducible and extensible.
+
+## Capstones at a glance
+
+| Capstone | Focus | What it demonstrates | Entry point |
+|----------|-------|----------------------|-------------|
+| **1. Optimisation** | Maths / optimisation | Gradient descent, loss landscapes, convergence behaviour | [capstone01_optimisation](/capstone01_optimisation)|
+| **2. Neural Nets from Scratch** | Core ML | Backpropagation, training loop, evaluation | [capstone02_mlp](/capstone02_mlp) |
+| **3. Tiny Transformer** | LLM mechanics | Attention, embeddings, autoregressive decoding | [capstone03_transformer_llm](/capstone03_transformer_llm) |
+| **4. MCP Agent System** | Systems | Tool calling, memory, budgets, protocol-driven agents | [capstone04_mcp_agent](/capstone04_mcp_agent)|
+
 
 # Capstone 1 - Gradient-Based Optimisation Case Study
 ## Location: **[capstone01_optimisation](/capstone01_optimisation)**
