@@ -91,7 +91,10 @@ The project is designed to be run locally using standard Python tooling:
     2.  cd theaiengineer-curriculum/capstone04/Capstone/src
     3.  Set up the project root:
             `export INCIDENT_MCP_ROOT=$(pwd)` -> this can also live in your .env file
-    4.  Install dependencies
+    4.  Install dependencies (conda)
+            `bash
+            `conda env create -f environment.yml
+            `conda activate theAIE
     5.  In a terminal, Start the MCP server:
             `python -m incident_mcp server`
     6.  In a second terminal, run the agent:
