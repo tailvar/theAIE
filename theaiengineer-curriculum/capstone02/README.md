@@ -1,6 +1,6 @@
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/tailvar/theAIE/blob/master/theaiengineer-curriculum/capstone02/notebooks/tae_capstone_wk2.ipynb)
 
-←**[Back to main README](../../README.md)**
+← **[Back to main README](../../README.md)**
 
 
 # Tiny One-Hidden-Layer MLP: NumPy → PyTorch (XOR)

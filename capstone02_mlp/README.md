@@ -1,6 +1,6 @@
 # Capstone 2 — Tiny MLP (NumPy → PyTorch)
 
-← **[Back to main README](../../README.md)**
+← **[Back to main README](../README.md)**
 
 This capstone builds a simple multi-layer perceptron (MLP) from first principles,
 starting with NumPy and manual backpropagation, then moving to PyTorch and

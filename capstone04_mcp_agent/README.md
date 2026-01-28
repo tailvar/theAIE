@@ -1,6 +1,6 @@
 # Capstone 4 — Incident Command Agent (MCP)
 
-←**[Back to main README](../README.md)**
+← **[Back to main README](../README.md)**
 
 
 This capstone builds a structured, protocol-driven AI agent system using the
