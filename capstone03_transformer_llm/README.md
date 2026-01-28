@@ -1,6 +1,6 @@
 # Capstone 3 — Tiny Transformer Language Model
 
-←**[Back to main README](../../README.md)**
+←**[Back to main README](../README.md)**
 
 This capstone implements a small GPT-style transformer language model to build
 intuition for attention mechanisms, embeddings, and autoregressive decoding.

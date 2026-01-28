@@ -1,7 +1,7 @@
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](
 https://colab.research.google.com/github/tailvar/TheAIE/blob/master/theaiengineer-curriculum/capstone03/notebooks/tae_capstone_wk3.ipynb)
 
-←**[Back to main README](../../README.md)
+←**[Back to main README](../../README.md)**
 
 # **Tiny Transformer – Architecture, Workflow, and Reproducibility**
 
