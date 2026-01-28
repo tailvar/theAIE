@@ -1,5 +1,7 @@
 # Capstone 1 — Gradient-Based Optimisation
 
+← **[Back to main README](../../README.md)**
+
 This capstone explores optimisation dynamics (gradient descent, momentum, SGD)
 using simple loss landscapes and visual diagnostics.
 

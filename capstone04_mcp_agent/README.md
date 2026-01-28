@@ -1,5 +1,8 @@
 # Capstone 4 — Incident Command Agent (MCP)
 
+←**[Back to main README](../../README.md)**
+
+
 This capstone builds a structured, protocol-driven AI agent system using the
 Model Context Protocol (MCP). The agent follows an Observe → Plan → Act → Learn
 loop and interacts with tools and resources in a controlled, auditable way.
