@@ -106,5 +106,9 @@ This repository relies on a conda environment for dependency management.
     conda env create -f environment.yml
     conda activate theAIE
 
+# License
+
+This project is licensed under the MIT license - see the LICENSE file for details.
+
 # <b>Summary</b>
 <b>This repository demonstrates an end-to-end journey through modern AI engineering: from calculus and optimisation, through neural networks and transformers to the deisgn of structured, auditable agent systems. The focus throughout is not on treating models as black boxes, but on building understanding and control around how they learn reason and act within real systems</b>.
